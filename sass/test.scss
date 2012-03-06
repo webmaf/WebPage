@@ -1,0 +1,96 @@
+$blue: #3bbfce;
+$blue1: #3bbfce;
+$blue2: #3bbfce;
+$blue3: $blue - 100;
+
+$gray: #777777;
+$gray-light: $gray + 33;
+$gray-dark: $gray - 33;
+
+$test: 0.3;
+$white: #ffffff;
+$margin: 16px;
+
+@mixin shadow-dark($aplha){
+    -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+    -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+    box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+    color: $gray-light;
+    background-color: rgba(0, 0, 0, $aplha);
+}
+
+@mixin border-corner($radius){
+    border-radius: $radius;
+}
+
+@mixin grad {
+    padding: 1%;
+    background-color: $gray;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($gray-dark), to($gray-light));
+    background-image: -webkit-linear-gradient(top, $gray-dark, $gray-light);
+    background-image: -moz-linear-gradient(top, $gray-dark, $gray-light);
+    background-image: -ms-linear-gradient(top, $gray-dark, $gray-light);
+    background-image: -o-linear-gradient(top, $gray-dark, $gray-light);
+}
+
+body {
+    margin: 10px 10%;
+    background-image: url(../images/background.jpg);
+    .wrapper {
+        @include grad;
+        padding: 10px;
+        border-radius: 10px;
+    }
+}
+
+.form-gray {
+    @include shadow-dark(0.7);
+    width: 600px;
+    padding: 10px;
+    label {
+        margin-left: 10px;
+        position: relative;
+        display: block;
+        padding: 2px;
+        span {
+            display: inline-block;
+            width: 40%;
+        }
+        input {
+            width: 55%;
+        }
+    }
+    input {
+        @include shadow-dark(0.3);
+        @include border-corner(4px);
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 170px;
+        border: 0;
+        margin: 0;
+        padding: 5px 8px 5px 30px;
+        font-size: 0.8em;
+    }
+    .check {
+        background-image: none;
+    }
+    .error {
+        background-image: url(../images/form-check-abort2.png);
+        background-position: 8px 8px;
+        background-repeat: no-repeat;
+    }
+    .success {
+        background-image: url(../images/form-check-accept2.png);
+        background-position: 8px 8px;
+        background-repeat: no-repeat;
+    }
+}
+
+button {
+    @include shadow-dark(0.3);
+    @include border-corner(4px);
+    border: 1px;
+}

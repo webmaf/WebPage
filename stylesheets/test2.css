@@ -1,0 +1,18 @@
+body {
+  color: #333333;
+  background-color: #f5f5dc; }
+
+.wrapper {
+  width: 950px;
+  margin: 0 auto; }
+
+article > div {
+  float: left;
+  width: 33%; }
+
+article {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #5c5c5c; }
+
+footer {
+  border-top: 1px solid #ffffff; }

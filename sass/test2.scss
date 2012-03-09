@@ -1,0 +1,28 @@
+$beige: #f5f5dc;
+$light: #f5f5f5;
+$font1: #333333;
+$gray: #5c5c5c;
+
+body {
+    color: $font1;
+    background-color: $beige;
+
+}
+
+.wrapper {
+    width: 950px;
+    margin: 0 auto;
+}
+
+article > div {
+    float: left;
+    width: 33%;
+}
+
+article {
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid $gray;
+}
+footer {
+    border-top: 1px solid #ffffff;
+}

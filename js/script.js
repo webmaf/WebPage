@@ -1,8 +1,105 @@
-/* Author:
-
+/**
+ * Author: webmaf
+ * -------------------------------------------------------------------------------
  */
 
 
+/**
+ * Google Analytics
+ */
+/*var _gaq = [
+ ['_setAccount', 'UA-XXXXX-X'],
+ ['_trackPageview']
+ ];
+ (function(d, t) {
+ var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+ g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+ s.parentNode.insertBefore(g, s)
+ }(document, 'script'));*/
 
+function buildSlider() {
+}
 
+function hasAddClass(elements, from, to) {
+    if (typeof to == 'undefined') {
+        elements.toggleClass(from);
+    }
+    else {
+        if (!elements.hasClass(from)) {
+            elements.addClass(from);
+        }
+        elements.removeClass(to);
+    }
+}
 
+/**
+ * Run if DOM are rendered
+ */
+(function() {
+    /**
+     * Search selector and add shadow with data keywords for the style
+     */
+    /*    $('.addShadow').each(function(e) {
+     var box = $(this),
+     typ = box.data('shadow');
+     if (typ != 'undefined') {
+     $(this).addClass('oh').removeClass('addShadow').prepend('<div class="shadow-' + typ + '"></div>');
+     }
+     });*/
+
+    $('.addShadow').each(function(e) {
+        var box = $(this),
+            typ = box.data('shadow');
+
+        box.removeClass('addShadow');
+        if (typeof typ !== 'undefined') {
+            box.addClass('shadow-' + typ);
+        }
+        else {
+            box.children().each(function(i) {
+                var typ = $(this).data('shadow');
+                if (typeof typ !== 'undefined') {
+                    $(this).addClass('shadow-' + typ);
+                }
+            });
+        }
+    });
+
+    $('.col-border').each(function(e) {
+        var elem = $(this).next();
+        if (elem.hasClass('shadow-right')) {
+            elem.css({
+                'margin':'0 -1px 0 1px'
+            });
+        }
+    });
+
+    $('.row').each(function() {
+        var height = 0,
+            column = $(this).find('.column').siblings();
+        column.each(function() {
+            var current = $(this).height();
+            height = (current > height) ? current : height;
+        });
+        column.height(height);
+    });
+
+    $('.form-gray input').keyup(function() {
+        var input = $(this),
+            value = input.val().length;
+        if (value == 0) {
+            input.removeClass('error');
+            input.removeClass('success');
+            input.addClass('check');
+        }
+        else {
+            input.removeClass('check');
+            if (parseInt(value) < 10) {
+                hasAddClass(input, 'error', 'success');
+            }
+            else {
+                hasAddClass(input, 'success', 'error');
+            }
+        }
+    });
+})();

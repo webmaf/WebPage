@@ -45,19 +45,6 @@
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="js/slider.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
-<script type="text/javascript">
-    $(window).load(function() {
-        if ($('html').not('.lt-ie8').length > 0) {
-            var container = $('.slider').find('.slider-screen ul'),
-                slider = new Slider(container, $('.slider-nav'), 960),
-                button = slider.nav.find('button').on('click', function() {
-                    slider.setCurrent($(this).data('dir'));
-                    slider.transition();
-                });
-            console.log(true);
-        }
-    });
-</script>
 <?php echo $page_addscript; ?>
 </body>
 </html>

@@ -1,24 +1,44 @@
 <article class="navigation">
-    <div class="row first">
-        <div class="column col-8 shadow-left">
+    <div class="row">
+        <div class="column col-8 shadow-col">
             <div>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed ...
             </div>
         </div>
         <div class="column col-8 shadow-col col-border">
-            <div>
-                <nav>
+            <div class="clearfix row">
+                <nav class="column">
                     <ul>
-                        <li><a href="">link</a></li>
-                        <li><a href="">link</a></li>
-                        <li><a href="">link</a></li>
-                        <li><a href="">link</a></li>
-                        <li><a href="">link</a></li>
+                        <li class="first">webmaf</li>
+                        <li><a href="">Developer</a></li>
+                        <li><a href="">Portfolio</a></li>
+                        <li><a href="">Tutorial</a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </nav>
+
+                <nav class="column">
+                    <ul>
+                        <li class="first">secret</li>
+                        <li><a href="">Hidden</a></li>
+                        <li><a href="">Invisible</a></li>
+                        <li><a href="">Stealth</a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </nav>
+
+                <nav class="column last">
+                    <ul>
+                        <li class="first">games</li>
+                        <li><a href="">Steam</a></li>
+                        <li><a href="">Calculator</a></li>
+                        <li><a href="">Infos</a></li>
+                        <li><a href="">Puzzle</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
-        <div class="column col-8 shadow-right">
+        <div class="column col-8 shadow-col">
             <div>
                 1
             </div>

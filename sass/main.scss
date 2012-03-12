@@ -1,3 +1,5 @@
+// Variables
+
 $font1: #333333;
 $font2: #333333;
 
@@ -10,6 +12,10 @@ $beige-link: #532407;
 
 $white: white;
 $black: black;
+
+$page-width: 960px;
+
+// Functions
 
 @mixin shadow-inside($side: 0, $aplha: 0.5){
     -moz-box-shadow: inset $side 2px 25px 0px rgba(#000000, $aplha);
@@ -25,8 +31,18 @@ $black: black;
     box-shadow: $side 15px 20px 5px rgba(#000000, $aplha);
 }
 
-@mixin shadow-col($px, $alpha){
-    box-shadow: inset $px 15px 25px -5px rgba(0, 0, 0, $alpha);
+@mixin shadow-focus($alpha: 0.5){
+    -moz-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha), 0px 0px 25px 0px rgba(0, 0, 0, $alpha);
+    -webkit-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha), 0px 0px 25px 0px rgba(0, 0, 0, $alpha);
+    -o-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha), 0px 0px 25px 0px rgba(0, 0, 0, $alpha);
+    box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha), 0px 0px 25px 0px rgba(0, 0, 0, $alpha);
+}
+
+@mixin shadow-colomn($alpha: 0.5){
+    -moz-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha);
+    -webkit-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha);
+    -o-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha);
+    box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha);
 }
 
 @mixin createGridSystem($gridCols: 24, $gridWidth: 30px, $marginWidth: 10px){
@@ -35,14 +51,13 @@ $black: black;
             width: $gridCols * $gridWidth;
         }
         @else {
-            width: $gridCols * $gridWidth + $gridCols * $marginWidth - $marginWidth;
+            //width: $gridCols * $gridWidth + $gridCols * $marginWidth - $marginWidth;
             width: ($gridWidth + $marginWidth) * $gridCols;
         }
         margin: 20px auto 0;
         border-top: 1px solid $beige-line;
         border-left: 1px solid $beige-line;
         border-right: 1px solid $beige-line;
-
     }
     .row {
 
@@ -84,7 +99,8 @@ a {
 }
 
 h1 {
-    margin: 0;
+    margin: 0 10px;
+    text-align: right;
 }
 
 .oh {
@@ -93,9 +109,7 @@ h1 {
 }
 
 .content {
-    background: url(../images/background.jpg);
-    min-height: 100px;
-/*padding: 5px 10px;*/
+    background-color: $beige-normal;
 }
 
 //  Javascript: Shadow Content only with Javascript
@@ -106,22 +120,13 @@ h1 {
         border-left: 1px solid white;
         border-right: 1px solid white;
         margin: 0 -1px;
+        @include shadow-focus(0.5);
     }
     .page {
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
     }
-    .first {
-        .shadow-col {
-            @include shadow-col(0, 0.5);
-        }
-
-        .shadow-left {
-            @include shadow-col(-5px, 0.5);
-        }
-
-        .shadow-right {
-            @include shadow-col(5px, 0.5);
-        }
+    .shadow-col {
+        @include shadow-colomn(0.5);
     }
 }
 
@@ -132,38 +137,40 @@ article {
     &.navigation {
         border-top: 0;
         background-color: $beige-light;
+        nav {
+            width: 33%;
+            float: left;
+            border-right: 1px solid $beige-normal;
+            &.last {
+                border-right: 0;
+            }
+            ul {
+                li {
+                    padding: 0 4px;
+                    border-top: 1px solid $beige-dark - 2;
+                }
+                .first {
+                    border-top: 0;
+                    background-color: $beige-normal;
+                }
+                .last {
+
+                }
+            }
+        }
+        .col-border {
+            a {
+                font-size: 0.8em;
+                &.hover {
+                    color: $black;
+                }
+            }
+        }
     }
     .column div {
         padding: 25px 15px;
         text-align: justify;
     }
-}
-
-.shadow-top {
-    @include shadow-inside(-30px, 0.6);
-    height: 200%;
-    width: 120%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.shadow-all {
-    @include shadow-inside(0, 0.6);
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.shadow-noside {
-    @include shadow-inside(-30px, 0.6);
-    height: 100%;
-    width: 120%;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 footer, .footer {
@@ -173,13 +180,12 @@ footer, .footer {
     padding-bottom: 20px;
     margin-bottom: -10px;
     font-size: 0.7em;
-
     p {
         margin: 0.2em;
     }
 }
 
-iconFrame {
+.iconFrame {
     background-color: black;
     padding: 1px;
     border-left: 1px solid #3A2912;
@@ -208,6 +214,7 @@ iconFrame {
         margin: 0;
         padding: 0;
         li {
+            width: $page-width;
             float: left;
         }
     }

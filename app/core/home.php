@@ -13,6 +13,11 @@
             </li>
             <li>
                 <div>
+                    hallöchen
+                </div>
+            </li>
+            <li>
+                <div>
                     <img src="images/slide3.jpg" />
                 </div>
             </li>

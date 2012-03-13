@@ -46,5 +46,6 @@
 <script type="text/javascript" src="js/slider.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <?php echo $page_addscript; ?>
+<!--<script src="http://eu.battle.net/d3/static/js/tooltips.js"></script>-->
 </body>
 </html>

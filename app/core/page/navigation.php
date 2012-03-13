@@ -9,7 +9,7 @@
             <div class="clearfix row">
                 <nav class="column">
                     <ul>
-                        <li class="first">webmaf</li>
+                        <li class="first"><span>webmaf</span></li>
                         <li><a href="">Developer</a></li>
                         <li><a href="">Portfolio</a></li>
                         <li><a href="">Tutorial</a></li>
@@ -19,7 +19,7 @@
 
                 <nav class="column">
                     <ul>
-                        <li class="first">secret</li>
+                        <li class="first"><span>secret</span></li>
                         <li><a href="">Hidden</a></li>
                         <li><a href="">Invisible</a></li>
                         <li><a href="">Stealth</a></li>
@@ -29,7 +29,7 @@
 
                 <nav class="column last">
                     <ul>
-                        <li class="first">games</li>
+                        <li class="first"><span>games</span></li>
                         <li><a href="">Steam</a></li>
                         <li><a href="">Calculator</a></li>
                         <li><a href="">Infos</a></li>
@@ -46,7 +46,4 @@
     </div>
 </article>
 
-<article>
-    <!--<img alt="" src="" />-->
-    <br /><br /><br /><br />
-</article>
+<article id="blindnav"><nav></nav></article>

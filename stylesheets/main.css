@@ -147,7 +147,7 @@ article {
     padding: 5px; }
     #blindnav nav ul li {
       cursor: pointer; }
-      #blindnav nav ul li.first ul.hide {
+      #blindnav nav ul li.first ul {
         display: none; }
       #blindnav nav ul li.first:hover {
         background-color: #f5f5dc; }

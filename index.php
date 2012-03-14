@@ -24,7 +24,9 @@
  * === INCLUDE
  * ------------------------------------------------
  * */
-include 'app/core/config.php';
+if (file_exists('app/core/config.php')) {
+    include 'app/core/config.php';
+}
 //include 'php/function/function.php';
 //include 'php/function/transaction.php';
 //require_once 'php/url_manipulation.php';

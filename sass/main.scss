@@ -195,7 +195,7 @@ article {
             li {
                 cursor: pointer;
                 &.first {
-                    ul.hide {
+                    ul {
                         display: none;
                     }
                     &:hover {

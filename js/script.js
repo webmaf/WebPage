@@ -96,7 +96,7 @@ function hasAddClass(elements, from, to) {
     col.each(function() {
 
         var li = $(this).clone().children('.first'),
-            sib = li.siblings().appendTo('<ul class="hide"></ul>'),
+            sib = li.siblings().appendTo('<ul></ul>'),
             html = sib.parent().appendTo(li);
 
         nav.children('ul').append(html.parent());
@@ -149,8 +149,9 @@ function hasAddClass(elements, from, to) {
     $(window).load(function() {
         if ($('html').not('.lt-ie8').length > 0) {
 
-            var container = $('.slider').find('.slider-screen ul'),
-                slider = new Slider(container, $('.slider-nav'), container.end('.slider').width() || 960),
+            var id = $('#slider-home'),
+                container = id.find('.slider-screen ul'),
+                slider = new Slider(container, id.find('.slider-nav'), id.width() || 960),
                 button = slider.nav.find('button');
 
             button.on('click', function() {
@@ -159,4 +160,13 @@ function hasAddClass(elements, from, to) {
             });
         }
     });
+
+    // slider shit
+
+    var id = $('#slider-top');
+    var navi = id.find('.slider');
+    var slider1 = new Slider(id, navi, 500);
+
+
+
 })();

@@ -140,16 +140,23 @@ article {
     text-align: justify; }
 
 #blindnav {
-  position: absolute;
-  top: 0;
-  left: -20px; }
+  overflow: hidden;
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  width: 10px;
+  border-right: 1px solid #8b7e5c;
+  border-radius: 0px 12px 12px 0px;
+  box-shadow: 0px 0px 15px -4px black; }
+  #blindnav.open, #blindnav:hover {
+    width: 150px; }
   #blindnav nav {
-    padding: 5px; }
+    padding: 5px 5px 5px 20px; }
     #blindnav nav ul li {
       cursor: pointer; }
       #blindnav nav ul li.first ul {
         display: none; }
-      #blindnav nav ul li.first:hover {
+      #blindnav nav ul li.first span:hover {
         background-color: #f5f5dc; }
 
 footer, .footer {

@@ -186,11 +186,20 @@ article {
 }
 
 #blindnav {
-    position: absolute;
-    top: 0;
-    left: -20px;
+    overflow: hidden;
+    position: fixed;
+    top: 100px;
+    left: 0px;
+    width: 10px;
+    border-right: 1px solid $beige-line;
+    border-radius: 0px 12px 12px 0px;
+    box-shadow: 0px 0px 15px -4px #000;
+
+    &.open, &:hover {
+        width: 150px;
+    }
     nav {
-        padding: 5px;
+        padding: 5px 5px 5px 20px;
         ul {
             li {
                 cursor: pointer;
@@ -198,7 +207,7 @@ article {
                     ul {
                         display: none;
                     }
-                    &:hover {
+                    &span:hover {
                         background-color: $beige-white;
                     }
                 }

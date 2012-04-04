@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><gamesList>
+	<steamID64>76561197995754090</steamID64>
+	<steamID><![CDATA[Maf]]></steamID>
+	<games>
+		<game>
+			<appID>72850</appID>
+			<name><![CDATA[The Elder Scrolls V: Skyrim]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/72850/c5af3cde13610fca25cd17634a96d72487d21e74.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/72850]]></storeLink>
+			<hoursLast2Weeks>23.1</hoursLast2Weeks>
+			<hoursOnRecord>97.6</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/TheElderScrollsVSkyrim]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/TheElderScrollsVSkyrim/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>201760</appID>
+
+			<name><![CDATA[Cities XL 2012]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/201760/8414cfcfaeda7788332960fd697e6287dca2b214.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/201760]]></storeLink>
+			<hoursLast2Weeks>18.2</hoursLast2Weeks>
+			<hoursOnRecord>18.4</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/CitiesXL2012]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/CitiesXL2012/achievements/]]></globalStatsLink>
+		</game>
+
+		<game>
+			<appID>105600</appID>
+			<name><![CDATA[Terraria]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/105600/e3f375e78ada9d2ec7ffa521fe1b0052d1d2bbb5.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/105600]]></storeLink>
+			<hoursLast2Weeks>17.2</hoursLast2Weeks>
+			<hoursOnRecord>50.8</hoursOnRecord>
+
+		</game>
+		<game>
+			<appID>48000</appID>
+			<name><![CDATA[LIMBO]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/48000/9f35c3d64649a5a03b69d6a9218b1f77caf15025.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/48000]]></storeLink>
+			<hoursLast2Weeks>1.5</hoursLast2Weeks>
+			<hoursOnRecord>1.5</hoursOnRecord>
+
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/LIMBO]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/LIMBO/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>630</appID>
+			<name><![CDATA[Alien Swarm]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/630/de3320a2c29b55b6f21d142dee26d9b044a29e97.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/630]]></storeLink>
+
+			<hoursOnRecord>19.8</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/AlienSwarm]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/AlienSwarm/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>34010</appID>
+			<name><![CDATA[Alpha Protocol]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/34010/3ea9dae28f71c9535229dc23a594734497307fa9.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/34010]]></storeLink>
+			<hoursOnRecord>2.5</hoursOnRecord>
+		</game>
+		<game>
+			<appID>46410</appID>
+			<name><![CDATA[Avencast]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/46410/bc66feb72ed8c32d72b7670b4d5e26f3bd1291d1.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/46410]]></storeLink>
+
+			<hoursOnRecord>11.6</hoursOnRecord>
+		</game>
+		<game>
+			<appID>7670</appID>
+			<name><![CDATA[BioShock]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/7670/4c2a7f97e6556a95319eb346aed7beff9fe0535c.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/7670]]></storeLink>
+			<hoursOnRecord>1.6</hoursOnRecord>
+
+		</game>
+		<game>
+			<appID>6370</appID>
+			<name><![CDATA[Bloodline Champions]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/6370/f229c8d917dec851027ae1c8cc2f7de5ce3695f9.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/6370]]></storeLink>
+			<hoursOnRecord>0.2</hoursOnRecord>
+		</game>
+
+		<game>
+			<appID>10180</appID>
+			<name><![CDATA[Call of Duty: Modern Warfare 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/10180/82de30354cb5ee352609c47ea47b86797008e436.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/10180]]></storeLink>
+			<hoursOnRecord>16.6</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/ModernWarfare2]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/ModernWarfare2/achievements/]]></globalStatsLink>
+
+		</game>
+		<game>
+			<appID>10190</appID>
+			<name><![CDATA[Call of Duty: Modern Warfare 2 - Multiplayer]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/10190/070cad064b3a81d6ede0f6054d9eb763004a07e0.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/10190]]></storeLink>
+			<hoursOnRecord>266.9</hoursOnRecord>
+		</game>
+
+		<game>
+			<appID>62100</appID>
+			<name><![CDATA[Chime]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/62100/32d5d8d0c5fa3a60725caf1a19620f1850105cb1.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/62100]]></storeLink>
+			<hoursOnRecord>21.6</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Chime]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Chime/achievements/]]></globalStatsLink>
+
+		</game>
+		<game>
+			<appID>73010</appID>
+			<name><![CDATA[Cities in Motion]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/73010/d768b8afb0b4bd3f5408c6354efce98b917b2e0e.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/73010]]></storeLink>
+			<hoursOnRecord>66</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/CitiesInMotion]]></statsLink>
+
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/CitiesInMotion/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>240</appID>
+			<name><![CDATA[Counter-Strike: Source]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/240/ee97d0dbf3e5d5d59e69dc20b98ed9dc8cad5283.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/240]]></storeLink>
+			<hoursOnRecord>116.2</hoursOnRecord>
+
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/CS:S]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/CS:S/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>260</appID>
+			<name><![CDATA[Counter-Strike: Source Beta]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/260/0c97784bee7eb45f0c11005446218f0b179f3d9a.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/260]]></storeLink>
+
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/CS:SBeta]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/CS:SBeta/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>12330</appID>
+			<name><![CDATA[DarkStar One]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12330/5db27b1b164a8bfc6cda18ab8ae77795d9fa00f3.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12330]]></storeLink>
+
+		</game>
+		<game>
+			<appID>91310</appID>
+			<name><![CDATA[Dead Island]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/91310/62632a275a4cc08f0238ed3d589ce1d8627fde91.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/91310]]></storeLink>
+			<hoursOnRecord>32.9</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/DeadIsland]]></statsLink>
+
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/DeadIsland/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>18040</appID>
+			<name><![CDATA[DeathSpank]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/18040/94e9855584c4c00947f10e89944e4d5349bdb7ae.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/18040]]></storeLink>
+			<hoursOnRecord>5.1</hoursOnRecord>
+
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/DeathSpank]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/DeathSpank/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>11440</appID>
+			<name><![CDATA[DiRT]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/11440/3a46842038c9c15d3f2cedfe4d515f80e22ea00f.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/11440]]></storeLink>
+
+		</game>
+		<game>
+			<appID>12840</appID>
+			<name><![CDATA[DiRT 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12840/3f724d26e4a70f19427f2f507c1e940061363610.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12840]]></storeLink>
+			<hoursOnRecord>38.2</hoursOnRecord>
+		</game>
+
+		<game>
+			<appID>1640</appID>
+			<name><![CDATA[Disciples II: Gallean's Return]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/1640/2682ab5134e19136db9998a54eb3d7ef7ed3e404.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/1640]]></storeLink>
+		</game>
+		<game>
+			<appID>1630</appID>
+
+			<name><![CDATA[Disciples II: Rise of the Elves]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/1630/2682ab5134e19136db9998a54eb3d7ef7ed3e404.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/1630]]></storeLink>
+		</game>
+		<game>
+			<appID>57800</appID>
+			<name><![CDATA[Doc Clock: The Toasted Sandwich of Time]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/57800/e066cec9afe5dec5a6150cc87dfef8d01fd1216c.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/57800]]></storeLink>
+			<hoursOnRecord>0.5</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/DocClock]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/DocClock/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>23120</appID>
+			<name><![CDATA[Droplitz]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/23120/5a5e7bf68beca40fe36dc0e63c1e764489f405a4.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/23120]]></storeLink>
+			<hoursOnRecord>8.4</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Droplitz]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Droplitz/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>65800</appID>
+
+			<name><![CDATA[Dungeon Defenders]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/65800/b1e36a367759469cf9428a47374f6c059b1ad54a.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/65800]]></storeLink>
+			<hoursOnRecord>46.1</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/DungeonDefenders]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/DungeonDefenders/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+
+			<appID>35480</appID>
+			<name><![CDATA[Dwarfs!?]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/35480/b3bc51a91f0ba091e59a97971d92c365ba2d7b12.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/35480]]></storeLink>
+			<hoursOnRecord>1</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Dwarfs]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Dwarfs/achievements/]]></globalStatsLink>
+		</game>
+
+		<game>
+			<appID>41210</appID>
+			<name><![CDATA[Eufloria]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/41210/49cb5913b7fafddca5138d7db58d3c7c821a441f.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/41210]]></storeLink>
+			<hoursOnRecord>12.6</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Eufloria]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Eufloria/achievements/]]></globalStatsLink>
+
+		</game>
+		<game>
+			<appID>22370</appID>
+			<name><![CDATA[Fallout 3 - Game of the Year Edition]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/22370/ddccc41c513694e7a5542aa115e9e091d6495420.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/22370]]></storeLink>
+			<hoursOnRecord>1.3</hoursOnRecord>
+		</game>
+
+		<game>
+			<appID>22380</appID>
+			<name><![CDATA[Fallout: New Vegas]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/22380/1a52975c043227184162627285e4bc0c83216e02.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/22380]]></storeLink>
+			<hoursOnRecord>129.6</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Fallout:NewVegas]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Fallout:NewVegas/achievements/]]></globalStatsLink>
+
+		</game>
+		<game>
+			<appID>72730</appID>
+			<name><![CDATA[Fallout New Vegas: Dead Money]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/72730/121efee43bc1655f230e24d30c803ec24e9bdbff.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/72730]]></storeLink>
+		</game>
+		<game>
+
+			<appID>72740</appID>
+			<name><![CDATA[Fallout New Vegas: Honest Hearts]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/72740/1f6ae8414c36a5cf8a89299f95786316255e0904.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/72740]]></storeLink>
+		</game>
+		<game>
+			<appID>19900</appID>
+			<name><![CDATA[Far Cry 2]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/19900/3fa04cb86e9512e8ff4f520860db163e86243dd8.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/19900]]></storeLink>
+			<hoursOnRecord>0.6</hoursOnRecord>
+		</game>
+		<game>
+			<appID>21960</appID>
+			<name><![CDATA[Far Cry 2: Fortunes Pack]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/21960/9676f9e42ed02828d406af360a4408e5ce600df4.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/21960]]></storeLink>
+		</game>
+		<game>
+			<appID>36620</appID>
+			<name><![CDATA[Forsaken World ]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/36620/48e7c1c616588ed1e3b1482d67ca755c13432d87.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/36620]]></storeLink>
+		</game>
+
+		<game>
+			<appID>12800</appID>
+			<name><![CDATA[FUEL]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12800/94f50c9ce92f692c809877423d7df8775e5fd79f.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12800]]></storeLink>
+			<hoursOnRecord>0.3</hoursOnRecord>
+		</game>
+		<game>
+
+			<appID>12220</appID>
+			<name><![CDATA[Grand Theft Auto: Episodes from Liberty City]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12220/40d1512d5922313878298c3731ffc066091a113a.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12220]]></storeLink>
+			<hoursOnRecord>40.2</hoursOnRecord>
+		</game>
+		<game>
+			<appID>12210</appID>
+
+			<name><![CDATA[Grand Theft Auto IV]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12210/47fb2a3e0763be24e49662591d6e076c58b2178d.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12210]]></storeLink>
+			<hoursOnRecord>59.8</hoursOnRecord>
+		</game>
+		<game>
+			<appID>48950</appID>
+			<name><![CDATA[Greed Corp]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/48950/a7521ac7891b0ac947c3676726af0109f0f2638e.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/48950]]></storeLink>
+			<hoursOnRecord>6.9</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/GreedCorp]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/GreedCorp/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>12750</appID>
+
+			<name><![CDATA[GRID]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12750/4d703d465e6e83f272ff07b3b9636fe52f2e9a19.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12750]]></storeLink>
+			<hoursOnRecord>0.2</hoursOnRecord>
+		</game>
+		<game>
+			<appID>46450</appID>
+			<name><![CDATA[Grotesque Tactics: Evil Heroes]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/46450/2b2d32106c159e05892b56ff492a90206eec2593.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/46450]]></storeLink>
+			<hoursOnRecord>10.4</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/GrotesqueTactics]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/GrotesqueTactics/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>380</appID>
+
+			<name><![CDATA[Half-Life 2: Episode One]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/380/b5a666a961d8b39896887abbed3b78c2b837c238.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/380]]></storeLink>
+			<hoursOnRecord>0.3</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/HL2:EP1]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/HL2:EP1/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+
+			<appID>31700</appID>
+			<name><![CDATA[Iron Grip: Warlord]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/31700/d227bee87659afbedfdc9c738e33427776ed11f7.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/31700]]></storeLink>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/IronGripWarlord]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/IronGripWarlord/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+
+			<appID>12380</appID>
+			<name><![CDATA[Jagged Alliance 2 Gold: Unfinished Business]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12380/b2d2a71b3e63c43eae9aff90613f39d2d6d2e7c6.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12380]]></storeLink>
+		</game>
+		<game>
+			<appID>12370</appID>
+			<name><![CDATA[Jagged Alliance 2: Gold Pack]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/12370/cef4473b7683c0c9756b50b3a3fa3e285e409144.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/12370]]></storeLink>
+		</game>
+		<game>
+			<appID>1250</appID>
+			<name><![CDATA[Killing Floor]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/1250/354c07a75cc16f6bf551b81d27f4eee3436fc2fb.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/1250]]></storeLink>
+
+			<hoursOnRecord>11.3</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/KillingFloor]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/KillingFloor/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>35420</appID>
+			<name><![CDATA[Killing Floor Mod: Defence Alliance 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/35420/45178d4b1999cf466fdf1ee4551f29b7e02b2bdf.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/35420]]></storeLink>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/35420]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/35420/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>3170</appID>
+			<name><![CDATA[King's Bounty: Armored Princess]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/3170/3b8405b798d2c22391d1b3a6fadc9a71231b549f.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/3170]]></storeLink>
+			<hoursOnRecord>67.5</hoursOnRecord>
+		</game>
+		<game>
+			<appID>500</appID>
+			<name><![CDATA[Left 4 Dead]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/500/0f67ee504d8f04ecd83986dd7855821dc21f7a78.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/500]]></storeLink>
+
+			<hoursOnRecord>3</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/L4D]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/L4D/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>550</appID>
+			<name><![CDATA[Left 4 Dead 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/550/205863cc21e751a576d6fff851984b3170684142.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/550]]></storeLink>
+			<hoursOnRecord>4.4</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/L4D2]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/L4D2/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>25700</appID>
+			<name><![CDATA[Madballs in...Babo: Invasion]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/25700/96dad895816288fc2eaba5601014401ab510fa3b.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/25700]]></storeLink>
+			<hoursOnRecord>11.4</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Madballs]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Madballs/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>25980</appID>
+
+			<name><![CDATA[Majesty 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/25980/8514e7e0a0f73d3d1ecd029075e86d2c0c0fbd0a.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/25980]]></storeLink>
+			<hoursOnRecord>17.9</hoursOnRecord>
+		</game>
+		<game>
+			<appID>43110</appID>
+			<name><![CDATA[Metro 2033]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/43110/df9a163ac1f28dfc84c93a6fc0dc51719eaef518.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/43110]]></storeLink>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Metro2033]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Metro2033/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>33570</appID>
+			<name><![CDATA[Patrician III]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/33570/1296060511acbb3f67c91ee9bd95c331fbbcd603.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/33570]]></storeLink>
+		</game>
+		<game>
+			<appID>3590</appID>
+			<name><![CDATA[Plants vs. Zombies: Game of the Year]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/3590/85bfe66e921d89b034a3a253fb648f1a930e034a.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/3590]]></storeLink>
+
+			<hoursOnRecord>34.5</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/PlantsVsZombies]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/PlantsVsZombies/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>31280</appID>
+			<name><![CDATA[Poker Night at the Inventory]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/31280/d962cde096bca06ee10d09880e9f3d6257941161.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/31280]]></storeLink>
+			<hoursOnRecord>2.1</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/PokerNight]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/PokerNight/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>400</appID>
+			<name><![CDATA[Portal]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/400/4184d4c0d915bd3a45210667f7b25361352acd8f.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/400]]></storeLink>
+			<hoursOnRecord>7.3</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Portal]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Portal/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>620</appID>
+
+			<name><![CDATA[Portal 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/620/d2a1119ddc202fab81d9b87048f495cbd6377502.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/620]]></storeLink>
+			<hoursOnRecord>12.3</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Portal2]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Portal2/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+
+			<appID>90530</appID>
+			<name><![CDATA[Rise of Immortals]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/90530/b18aafa693c0bafc843e797d648e0ccd94cfee2b.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/90530]]></storeLink>
+			<hoursOnRecord>45</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/RiseOfImmortals]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/RiseOfImmortals/achievements/]]></globalStatsLink>
+		</game>
+
+		<game>
+			<appID>40500</appID>
+			<name><![CDATA[Sacraboar]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/40500/606b7c0cc55b60bd2aca62755978ea5f3d64778b.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/40500]]></storeLink>
+			<hoursOnRecord>0.1</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Sacraboar]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Sacraboar/achievements/]]></globalStatsLink>
+
+		</game>
+		<game>
+			<appID>20820</appID>
+			<name><![CDATA[Shatter]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/20820/f1c592b51f11be58b6dcd3879646d85869f4558e.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/20820]]></storeLink>
+			<hoursOnRecord>2.1</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/Shatter]]></statsLink>
+
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/Shatter/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>8930</appID>
+			<name><![CDATA[Sid Meier's Civilization V]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/8930/2203f62bd1bdc75c286c13534e50f22e3bd5bb58.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/8930]]></storeLink>
+			<hoursOnRecord>116.2</hoursOnRecord>
+
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/CivV]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/CivV/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>99900</appID>
+			<name><![CDATA[Spiral Knights]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/99900/eef62584a3d0c3338f569b14a7e667758ad2b098.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/99900]]></storeLink>
+
+			<hoursOnRecord>2.3</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/SpiralKnights]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/SpiralKnights/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>40950</appID>
+			<name><![CDATA[Stronghold]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/40950/3d2d490b2283da621438fe781686f6cfd76fa35f.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/40950]]></storeLink>
+		</game>
+		<game>
+			<appID>40960</appID>
+			<name><![CDATA[Stronghold 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/40960/441bee5705835ae0c63ed6799ebb73322eb75bcf.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/40960]]></storeLink>
+			<hoursOnRecord>17</hoursOnRecord>
+
+		</game>
+		<game>
+			<appID>40970</appID>
+			<name><![CDATA[Stronghold Crusader + Extreme]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/40970/53f0454eb3d4281cfed79fd6e08af86b1fb417c1.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/40970]]></storeLink>
+		</game>
+		<game>
+
+			<appID>40980</appID>
+			<name><![CDATA[Stronghold Legends]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/40980/c10cdca10cc9b8b940e91a99686f0d260fe2b069.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/40980]]></storeLink>
+			<hoursOnRecord>2.3</hoursOnRecord>
+		</game>
+		<game>
+			<appID>40800</appID>
+
+			<name><![CDATA[Super Meat Boy]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/40800/70f084857297d5fdd96d019db3a990d6d9ec64f1.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/40800]]></storeLink>
+			<hoursOnRecord>1.3</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/SuperMeatBoy]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/SuperMeatBoy/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+
+			<appID>440</appID>
+			<name><![CDATA[Team Fortress 2]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/440/07385eb55b5ba974aebbe74d3c99626bda7920b8.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/440]]></storeLink>
+			<hoursOnRecord>28.9</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/TF2]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/TF2/achievements/]]></globalStatsLink>
+		</game>
+
+		<game>
+			<appID>113200</appID>
+			<name><![CDATA[The Binding Of Isaac]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/113200/d9a7ee7e07dffed1700cb8b3b9482105b88cc5b5.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/113200]]></storeLink>
+			<hoursOnRecord>11.9</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/BindingOfIsaac]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/BindingOfIsaac/achievements/]]></globalStatsLink>
+
+		</game>
+		<game>
+			<appID>33580</appID>
+			<name><![CDATA[The Great Art Race]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/33580/5a8345b291351caa2ab33b1bcd0b2d4e4d3d9861.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/33580]]></storeLink>
+			<hoursOnRecord>2.7</hoursOnRecord>
+		</game>
+
+		<game>
+			<appID>48120</appID>
+			<name><![CDATA[The Settlers 7: Paths to a Kingdom]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/48120/93dc79736017a4c3532c1cbfcefacc09b8462736.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/48120]]></storeLink>
+			<hoursOnRecord>64.5</hoursOnRecord>
+		</game>
+		<game>
+
+			<appID>20900</appID>
+			<name><![CDATA[The Witcher: Enhanced Edition]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/20900/d37dedbc4104d1683385d022314d1316399b3dce.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/20900]]></storeLink>
+			<hoursOnRecord>1.5</hoursOnRecord>
+		</game>
+		<game>
+			<appID>6980</appID>
+
+			<name><![CDATA[Thief: Deadly Shadows]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/6980/609345e7b64f268b72c01d8545cac9c23e54e8a2.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/6980]]></storeLink>
+			<hoursOnRecord>2.7</hoursOnRecord>
+		</game>
+		<game>
+			<appID>4540</appID>
+			<name><![CDATA[Titan Quest]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/4540/e82186f6efe8d5d593c2fb1b57f8b1e056e6d82e.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/4540]]></storeLink>
+			<hoursOnRecord>0.8</hoursOnRecord>
+		</game>
+		<game>
+			<appID>4550</appID>
+			<name><![CDATA[Titan Quest: Immortal Throne]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/4550/6b92b036480303ed864c4ac3d85a6700aa49c963.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/4550]]></storeLink>
+			<hoursOnRecord>18.9</hoursOnRecord>
+		</game>
+		<game>
+			<appID>11500</appID>
+			<name><![CDATA[ToCA Race Driver 3]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/11500/16592f72baae1813a2f0ef8731b7f836da719216.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/11500]]></storeLink>
+
+		</game>
+		<game>
+			<appID>33220</appID>
+			<name><![CDATA[Tom Clancy's Splinter Cell: Conviction]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/33220/6939f9914923cad9934603432b43fe7d46d47dd7.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/33220]]></storeLink>
+			<hoursOnRecord>18.6</hoursOnRecord>
+		</game>
+
+		<game>
+			<appID>23490</appID>
+			<name><![CDATA[Tropico 3 - Steam Special Edition]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/23490/c8e565a740d2e2c8a1a07548c875131eae72a1a7.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/23490]]></storeLink>
+			<hoursOnRecord>47.2</hoursOnRecord>
+		</game>
+		<game>
+
+			<appID>37030</appID>
+			<name><![CDATA[UFO: Extraterrestrials Gold]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/37030/fbe76be0d48fb11decb4f6144149a26c213241e9.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/37030]]></storeLink>
+			<hoursOnRecord>98.4</hoursOnRecord>
+		</game>
+		<game>
+			<appID>70300</appID>
+
+			<name><![CDATA[VVVVVV]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/70300/3d362d64d51ce524f12c853290ca6cce5761ff1c.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/70300]]></storeLink>
+		</game>
+		<game>
+			<appID>55150</appID>
+			<name><![CDATA[Warhammer 40,000 Space Marine]]></name>
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/55150/c18d0776e4b1db78c57e66b5bd7ba74b5927816a.jpg]]></logo>
+
+			<storeLink><![CDATA[http://store.steampowered.com/app/55150]]></storeLink>
+			<hoursOnRecord>5</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/SpaceMarine]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/SpaceMarine/achievements/]]></globalStatsLink>
+		</game>
+		<game>
+			<appID>22000</appID>
+			<name><![CDATA[World of Goo]]></name>
+
+			<logo><![CDATA[http://media.steampowered.com/steamcommunity/public/images/apps/22000/d2a60cb23c6743862af40267817099b08602ee92.jpg]]></logo>
+			<storeLink><![CDATA[http://store.steampowered.com/app/22000]]></storeLink>
+			<hoursOnRecord>5.8</hoursOnRecord>
+			<statsLink><![CDATA[http://steamcommunity.com/id/webmaf/stats/WorldOfGoo]]></statsLink>
+			<globalStatsLink><![CDATA[http://steamcommunity.com/stats/WorldOfGoo/achievements/]]></globalStatsLink>
+		</game>
+	</games>
+</gamesList>

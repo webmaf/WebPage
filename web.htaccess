@@ -1,0 +1,37 @@
+
+# [x] mod_rewrite starten
+
+	RewriteEngine On
+	Options +FollowSymlinks
+	RewriteBase /
+
+# [x] Seitenaufruf mit www.webmaf.de auf webmaf.de kuerzen
+
+	RewriteCond %{HTTP_HOST} ^([^.]+)\.webmaf\.de$ [NC]
+	RewriteRule ^(.*)$ http://webmaf.de/$1 [R=301,L]
+
+# [x] Alle URL Anfragen auf index.php umleiten
+
+	RewriteRule ^[^\.]*[^/]$ /$0/ [R=301]
+	RewriteRule ^(.*)/$ index.php [L]
+	
+# [/] Mehrere Trailing Slashes am Ende cutten
+
+	RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
+	RewriteRule . %1/%2 [R=301,L]
+
+# [/] Mehrere Trailing Slashes nach der Domain und in der Domain cutten
+
+	RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ //+([^\ ]*)
+	RewriteRule .* http://webmaf.de/%1 [R=301,L]
+	  
+# [/] Add Trailing Slash 
+
+	RewriteCond %{REQUEST_URI} ^/[^\.]+[^/]$
+	RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1/ [R=301,L]
+  
+# [/] trailing slash
+
+	#RewriteCond %{REQUEST_FILENAME} !-f
+	#RewriteCond %{REQUEST_URI} !(.*)/$
+	#RewriteRule ^(.*)$ http://www.domain.de/$1/ [L,R=301]

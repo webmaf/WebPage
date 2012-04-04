@@ -33,46 +33,6 @@ function hasAddClass(elements, from, to) {
  * Run if DOM are rendered
  */
 (function() {
-    /**
-     * Search selector and add shadow with data keywords for the style
-     */
-
-    /*
-     $('.addShadow').each(function(e) {
-     var box = $(this),
-     typ = box.data('shadow');
-     if (typ != 'undefined') {
-     $(this).addClass('oh').removeClass('addShadow').prepend('<div class="shadow-' + typ + '"></div>');
-     }
-     });
-
-     $('.addShadow').each(function(e) {
-     var box = $(this),
-     typ = box.data('shadow');
-
-     box.removeClass('addShadow');
-     if (typeof typ !== 'undefined') {
-     box.addClass('shadow-' + typ);
-     }
-     else {
-     box.children().each(function(i) {
-     var typ = $(this).data('shadow');
-     if (typeof typ !== 'undefined') {
-     $(this).addClass('shadow-' + typ);
-     }
-     });
-     }
-     });
-
-     $('.col-border').each(function(e) {
-     var elem = $(this).next();
-     if (elem.hasClass('shadow-right')) {
-     elem.css({
-     'margin':'0 -1px 0 1px'
-     });
-     }
-     });
-     */
 
     // auto-height from column of rows
 
@@ -89,6 +49,13 @@ function hasAddClass(elements, from, to) {
     });
 
     // navigation
+
+    $('.navigation .col-border li').on('mouseenter',
+        function() {
+            $(this).find('a').animate({'margin-left':'4px'}, 250);
+        }).on('mouseleave', function() {
+            $(this).find('a').animate({'margin-left':'0'}, 100);
+        });
 
     var col = $('.column ul'),
         nav = $('#blindnav nav').append('<ul></ul>');
@@ -120,6 +87,12 @@ function hasAddClass(elements, from, to) {
         }
         //ulThis.delay(5000).slideToggle('slow').toggleClass('hide');
     });
+
+    // sidebar navi
+
+    nav.on('mouseenter', function() {
+        nav.css({width:''})
+    })
 
     // checking formular
 
@@ -167,6 +140,175 @@ function hasAddClass(elements, from, to) {
     var navi = id.find('.slider');
     var slider1 = new Slider(id, navi, 500);
 
+    // renanum
 
+    function sortMin(a, b) {
+        return a - b;
+    }
+
+    function sortMax(a, b) {
+        return b - a;
+    }
+
+    function changeBackground(element, mode) {
+        var type = mode || 'even';
+        element.removeClass(type).filter(':' + type).addClass(type);
+    }
+
+    function getItem() {
+        var items = ['Blei', 'Eisen', 'Gold', 'Holz', 'Kohle', 'Kräuter', 'Leder', 'Rohglas', 'Tonerde', 'Balken', 'Bleirohre', 'Elfenbein', 'Fensterglas', 'Marmor', 'Naturstein', 'Statuen', 'Ziegel', 'Fischsauce', 'Getreide', 'Gewürze', 'Oliven', 'Olivenöl', 'Salz', 'Trauben', 'Wein', 'Esel', 'Geflügel', 'Pferde', 'Rinder', 'Schafe', 'Ziegen', 'Wilde Tiere', 'Amphoren', 'Geschirr', 'Heilsalbe', 'Möbel', 'Öllampen', 'Pergament', 'Schuhe', 'Schriftrollen', 'Flachs', 'Leinen', 'Mantel', 'Seide', 'Toga', 'Tuch', 'Tunika', 'Wolle', 'Karren', 'Pflug', 'Rüstungen', 'Segel', 'Waffen', 'Webstuhl', 'Werkzeug', 'Edelsteine', 'Farben', 'Glaswaren', 'Lehrschrift', 'Literatur', 'Parfüm', 'Prunkgefäße', 'Räucherwerk', 'Schmuck', 'Denare'];
+        return items;
+    }
+
+    function getItemImage(item) {
+        var items = getItem(),
+            pixel = 25,
+            pos = items.indexOf(item.replace('+', ''));
+        return (pos == -1) ? '24px 0' : '0 ' + -(pos * pixel) + 'px';
+    }
+
+    function addEventDeleteRow(element) {
+        if (element.length > 0) {
+            element.find('span.delete').on('click', function() {
+                $(this).closest('div').remove();
+            });
+        }
+    }
+
+    function cloneAppendTo(element) {
+        var row = element.closest('section').children('header').children('div').clone().appendTo(element);
+        addEventDeleteRow(row);
+        return $(row);
+    }
+
+    function multiEmpty(value) {
+        var x = parseFloat(value);
+        return (x == false || x < 1 || x == '' || isNaN(x) ) ? 1 : x;
+    }
+
+    function getData() {
+        obj.action = 'read';
+        $.ajax({
+            type:'POST',
+            async:false,
+            url:'app/core/home/json.renanum.php',
+            cache:false,
+            data:obj,
+            dataType:'json',
+            success:function(data) {
+                obj = {};
+                obj.items = data;
+                ren_article.children('div').remove();
+                for (var i in obj.items) {
+
+                    var div = cloneAppendTo(ren_article),
+                        tmp = obj.items[i][0];
+
+                    for (var j in obj.items[i]) {
+                        div.find('input:eq(' + j + ')').val(obj.items[i][j]);
+                    }
+
+                    if (obj.items[i][0].lastIndexOf('+') != -1) {
+                        div.find('span.item').append('<img src="img/renanum/star.png" />');
+                    }
+
+                    div.data('row', i);
+                    div.find('span.item').css({
+                        'backgroundPosition':getItemImage(tmp)
+                    });
+
+                    var sellmin = div.find('input[name=sellmin]').val(),
+                        selltop = multiEmpty(div.find('input[name=selltop]').val()),
+                        buymax = multiEmpty(div.find('input[name=buymax]').val());
+
+                    tmp = sellmin.indexOf('m');
+                    if (tmp != -1) {
+                        sellmin = multiEmpty(sellmin.slice(0, tmp)) + sellmin.slice(tmp + 1) / 60;
+                    }
+                    else {
+                        sellmin = multiEmpty(sellmin);
+                    }
+
+                    div.find('span.diff').text(Math.round(selltop / buymax * 100) / 100);
+                    div.find('span.market').text(Math.round(selltop * 60 / sellmin * 10) / 10);
+                    div.find('span.amount').text(Math.ceil(60 / sellmin * 24));
+                    div.find('span.benefit').text(Math.ceil(selltop * div.find('span.amount').text()));
+                }
+                changeBackground(ren_article.children('div'), 'even');
+            },
+            error:function() {
+                alert('error: read');
+            }
+        });
+    }
+
+    if ($('section.renanum').length > 0) {
+        var ren_section = $('section.renanum'),
+            ren_article = $('section.renanum article'),
+            obj = {};
+
+        ren_section.children('nav').find('.sort').on('click', function() {
+//            $(this).data('sort')
+            var x = [];
+            ren_article.find('.market').each(function() {
+                var key = 'hash' + $(this).text() + 'end';
+                x.push($(this).text());
+                $(this).closest('div').addClass(key);
+            });
+            x.sort(sortMax);
+            console.log(x);
+
+            var header = $('section.renanum header section');
+
+            for (var c in x) {
+                var key = 'hash' + x + 'end';
+                $('.' + key).appendTo(header);
+            }
+        });
+
+        getData();
+        ren_article.sortable({
+            opacity:0.6,
+            items:'div',
+            update:function() {
+                changeBackground(ren_article.children('div'), 'even');
+            }
+        });
+
+        addEventDeleteRow(ren_section);
+        ren_section.find('button[name=adds]').on('click', function() {
+            var ren_lastrow = cloneAppendTo(ren_article);
+            $(ren_lastrow).find('input.items').focus();
+        });
+        ren_section.find('button[name=save]').on('click', function() {
+            obj = {};
+            obj.action = 'write';
+            obj.items = [];
+            ren_article.children('div').each(function(i) {
+                var row = {};
+                $(this).find('input').each(function() {
+                    row[$(this).attr('name')] = $(this).val();
+                });
+                obj.items.push(row);
+            });
+
+            $.ajax({
+                type:'POST',
+                async:false,
+                url:'app/core/home/json.renanum.php',
+                cache:false,
+                data:obj,
+                dataType:'json',
+                success:function(data) {
+                    console.log('save ' + data);
+                    obj = {};
+                    getData();
+                },
+                error:function() {
+                    alert('error: save');
+                }
+            });
+        });
+    }
 
 })();

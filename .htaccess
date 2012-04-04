@@ -16,7 +16,25 @@
 ### github.com/h5bp/server-configs
 ###
 
+# ----------------------------------------------------------------------
+# altes Script meiner Website
+# ----------------------------------------------------------------------
 
+# [x] mod_rewrite starten
+
+#	RewriteEngine On
+#	Options +FollowSymlinks
+#	RewriteBase /
+
+# [x] Seitenaufruf mit www.webmaf.de auf webmaf.de kuerzen
+
+#	RewriteCond %{HTTP_HOST} ^([^.]+)\.webmaf\.de$ [NC]
+#	RewriteRule ^(.*)$ http://webmaf.de/$1 [R=301,L]
+
+# [x] Alle URL Anfragen auf index.php umleiten
+
+#	RewriteRule ^[^\.]*[^/]$ /$0/ [R=301]
+#	RewriteRule ^(.*)/$ index.php [L]
 
 # ----------------------------------------------------------------------
 # Better website experience for IE users

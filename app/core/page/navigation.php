@@ -1,11 +1,11 @@
 <article class="navigation">
     <div class="row">
-        <div class="column col-8 shadow-col">
+        <div class="column col-16 shadow-col">
             <div>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed ...
             </div>
         </div>
-        <div class="column col-8 shadow-col col-border">
+        <div class="column col-16 shadow-col col-border">
             <div class="clearfix row">
                 <nav class="column">
                     <ul>
@@ -16,7 +16,6 @@
                         <li><a href=""></a></li>
                     </ul>
                 </nav>
-
                 <nav class="column">
                     <ul>
                         <li class="first"><span>secret</span></li>
@@ -26,11 +25,10 @@
                         <li><a href=""></a></li>
                     </ul>
                 </nav>
-
                 <nav class="column last">
                     <ul>
                         <li class="first"><span>games</span></li>
-                        <li><a href="">Steam</a></li>
+                        <li><a href="?p=steam">Steam</a></li>
                         <li><a href="">Calculator</a></li>
                         <li><a href="">Infos</a></li>
                         <li><a href="">Puzzle</a></li>
@@ -38,12 +36,16 @@
                 </nav>
             </div>
         </div>
-        <div class="column col-8 shadow-col">
+        <div class="column col-16 shadow-col">
             <div>
-                1
+                <canvas>
+                    canvas
+                </canvas>
             </div>
         </div>
     </div>
 </article>
 
-<article id="blindnav"><nav></nav></article>
+<article id="blindnav">
+    <nav></nav>
+</article>

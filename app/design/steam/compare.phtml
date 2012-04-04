@@ -1,0 +1,222 @@
+<div>
+    <div id="hierBlock" class="short-tr">
+        <h1>Specials - Steam</h1>
+        <div>
+            <ul>
+                <li>
+                    <a class="markerfarbe" href="?p=steam-compare">Achievments</a>
+                    <span class="ui-icon ui-icon-radio-on"></span>
+                </li>
+                <li><a class="markerfarbe" href="?p=steam-games">Spieleliste</a>
+                    <span class="ui-icon ui-icon-radio-on"></span></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>Steam :: Achievments</h2>
+    </div>
+    <form action="?p=steam-compare<?php //$url = parse_url($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); echo $url['path'].'?pid=1'; ?>" method="post">
+        <div class="steamFriends ui-widget-header ui-corner-all">
+            <div class="side-left">
+                <input id="autogames" class="text px200" type="text" name="game" value="<?php echo $compareGame; ?>" />
+            </div>
+            <div class="side-left">
+                <div class="checkboxname">
+                <?php foreach ($friends as $key => $value): ?>
+                    <?php if ($value['show'] == 1 && $value['compare'] == 1): ?>
+                        <label>
+                            <input id="id<?php echo $value['id']; ?>" type="checkbox" name="<?php echo $key; ?>" <?php if (in_array($key, $user)) { echo 'checked="checked" ';} ?>/>
+                            <?php echo $key; ?>
+                        </label>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="side-right">
+                <input type="submit" name="send" value="vergleichen" />
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="info-gamelist">
+            <div class="blocks">
+                <div class="link"><span class="ui-icon ui-icon-triangle-1-e"></span>show all games</div>
+            </div>
+            <div class="games">
+
+            </div>
+        </div>
+        <p class="steamInfo">
+            <span class="ui-icon ui-icon-comment"></span>
+            Im Eingabefeld kommt der Name des Spiels in der Kurzschreibweise hinein was verglichen werden soll. Es gibt eine Autovervollständigung vom Stand unserer Spiele am 01.12.2011. Maximal 4 Freunde zum Vergleich möglich. 
+            <br /><span class="markerfarbe">Beispiel: Aus Civilization5 wird CivV</span>
+        </p>
+        <br /><br />
+    </form>
+    <script type="text/javascript">
+        // Bei JS die Checkboxen unsichtbar
+        jQuery('.checkboxname label input').hide();
+
+        // toggle Label Farbe
+        function colorLabel(element) {
+            var e = jQuery(element);
+            if (e.hasClass('markerfarbe2')) {
+                e.removeClass('markerfarbe2');
+            } else {
+                e.addClass('markerfarbe2');
+            }
+        }
+
+        // toggle Label Farbe
+        function lockSubmit() {
+            jQuery('.steamFriends input.ui-button').hide();
+            if (jQuery('.checkboxname input:checked').length > 0) {
+                jQuery('.steamFriends input.ui-button').show();
+            }
+        }
+
+        // 
+        function zeigeText(show, id) {
+            if (show == true) {
+                jQuery("#"+id+" > div").removeClass('versteck');
+            }
+            else {
+                jQuery("#"+id+" > div").addClass('versteck');
+            }
+        }
+
+        // 
+        function blub(arr) {
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                str += '<span>' + arr[i] + '</span>';
+            }
+            return str;
+        }
+
+        jQuery('document').ready(function(){
+            var availableGames = [<?php echo $availableGames; ?>];
+            jQuery('#autogames').autocomplete({
+                source: availableGames
+            });
+            jQuery('#info-gamelist .games').append(blub(availableGames));
+            jQuery('#info-gamelist .link').click(function(){
+                jQuery('#info-gamelist .link').toggleClass('active');
+                //jQuery(this).addClass('active')
+                jQuery('#info-gamelist .games').toggleClass('toggleshow');
+            });
+            jQuery('#info-gamelist .games span').mouseover(function(){
+                jQuery(this).toggleClass('markerfarbe');
+            }).mouseout(function(){
+                jQuery(this).toggleClass('markerfarbe');
+            }).click(function(){
+                jQuery('#autogames').val(jQuery(this).text());
+                jQuery(this).parent().toggleClass('toggleshow');
+                jQuery('#info-gamelist .link').toggleClass('active');
+            });
+        });
+
+        // init
+        lockSubmit();
+        // alle aktiven Checkboxen, Label hightlighten
+        jQuery('.checkboxname input:checked').each(function(index) {
+            colorLabel(jQuery(this).parent());
+        });
+        jQuery('.checkboxname input').click(function(){
+            colorLabel(jQuery(this).parent());
+            lockSubmit();
+        });
+
+    </script>
+    <?php if ($_SERVER['REQUEST_METHOD'] && !empty($compareGame) && count($user) > 0): ?>
+    <div class="steamBorder">Erfolge vergleichen</div>
+    <div class="steamVergleich">
+        <div class="head ui-widget-header ui-corner-all">
+            <?php foreach ($erfolgsliste as $friend => $wert): ?>
+            <div class="short-fl">
+                <span class="title markerfarbe2"><?php echo $daten[$friend]['_erfolg']; ?></span>
+                <p class=""><?php echo $daten[$friend]['_friend']; ?></p>
+                <?php $userhasgame = 0; if ('nix' != $erfolgsliste[$friend][0]['bild']) { $userhasgame = $friend; } ?>
+            </div>
+            <?php endforeach; ?>
+            <div class="short-fl headcount">
+                <span class="title markerfarbe2">/ <?php echo count($erfolgsliste[$userhasgame]); ?></span>
+                <p class="">Maximum</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="content">
+        <?php $usercol = 0; foreach ($erfolgsliste as $friend => $wert): ?>
+            <?php if ($wert[0]['bild'] == 'nix'): ?>
+                <div class="short-fl short-tc" style="width: 90px;">
+                    <div class="achievment-col short-tc">
+                    <br /><br />no Game
+                    </div>
+                </div>
+            <?php else: ?>
+                <div class="short-fl mover" style="width: 90px;">
+                    <?php foreach ($wert as $key => $value): ?>
+                        <div class="achievment-col short-tc">
+                            <div class="img-shadow">
+                                <img src="<?php echo $value['bild']; ?>" width="64" height="64" />
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        <?php $usercol++; endforeach; ?>
+
+        <?php $textcol = 790 + 28 - $usercol * 90; ?>
+        <div class="short-fl achievment-txt" style="width: <?php echo $textcol; ?>px;">
+            <?php $eidnr = 0; foreach ($erfolgsliste[$userhasgame] as $key => $value): $eidnr++; ?>
+            <div class="achievment-col">
+                <span class="borderLine"><?php echo $value['name']; ?></span>
+                <div class=" klein"><br /><?php echo $value['text']; ?></div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="ankerTop"><a href="/#top">top</a></div>
+    <?php endif; ?>
+    <script type="text/javascript">
+        // Bei JS die Checkboxen unsichtbar
+        jQuery('.steamVergleich .mover').mouseenter(function(){
+            jQuery('.steamVergleich .mover').css('opacity', '0.3');
+            jQuery(this).css('opacity', '1');
+        }).mouseleave(function(){
+            jQuery('.steamVergleich .mover').css('opacity', '1');
+        });
+    </script>
+                     
+<!--
+<div class="sta_container">
+    <div class="community mix">
+        <div class="com_frame_elements">
+            <div class="left"></div>
+            <div class="divider"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="corner1"></div>
+            <div class="corner2"></div>
+            <div class="corner3"></div>
+            <div class="corner4"></div>
+            <div class="menu_dim"></div>
+        </div>
+        <div class="com_menu">
+            <h2>From the community:</h2>
+            <ul class="com_menu_list">
+                <li class="cm_cat mix"><p class="mix">GOGmixes</p></li>
+                <li class="cm_cat rat"><p class="rat">Ratings</p></li>
+                <li class="cm_cat dis"><p class="dis">Discussions</p></li>
+            </ul>
+            <div class="com_menu_mark"></div>
+        </div>
+        <div class="com_wheel_region">
+          leer
+        </div>	
+    </div>
+</div>
+-->
+
+    </div>
+</div>

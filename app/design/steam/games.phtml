@@ -1,0 +1,82 @@
+<div>
+    <div id="hierBlock" class="short-tr">
+        <h1>Specials - Steam</h1>
+
+        <div>
+            <ul>
+                <li>
+                    <a class="markerfarbe" href="?p=steam-compare">Achievments</a>
+                    <span class="ui-icon ui-icon-radio-on"></span>
+                </li>
+                <li><a class="markerfarbe" href="?p=steam-games">Spieleliste</a>
+                    <span class="ui-icon ui-icon-radio-on"></span></li>
+            </ul>
+        </div>
+    </div>
+    <?php  ?>
+    <div>
+        <h2>Steam :: Spieleliste</h2>
+    </div>
+    <table width="100%" id="tab-gamelist" class="tablesorter">
+        <thead>
+        <tr class="info">
+            <td>gespielte Spiele:</td>
+            <?php foreach ($userprofil as $value): ?>
+            <td><?php echo $value[1]; ?></td>
+            <?php endforeach; ?>
+            <td colspan="3" style="text-align: center;">Spielstunden pro Spiel</td>
+        </tr>
+        <tr class="info">
+            <td>gespielte Stunden:</td>
+            <?php foreach ($userprofil as $value): ?>
+            <td><?php echo $value[2]; ?></td>
+            <?php endforeach; ?>
+            <td colspan="3">
+                <div class="info1">Gesamtwert der Summe</div>
+                <div class="info2">Mittelwert der Spielinhaber</div>
+                <div class="info3">Durchschnitt aller Freunde</div>
+            </td>
+        </tr>
+        <tr class="ui-state-default markerfarbe2">
+            <th class="first">
+                <span class="ui-icon"></span>
+                <span>Spieltitel</span>
+
+                <div>Der Name des Spiels</div>
+            </th>
+            <?php foreach ($userprofil as $value): ?>
+            <th>
+                <span class="ui-icon"></span>
+                <span><?php echo $value[0]; ?></span>
+            </th>
+            <?php endforeach; ?>
+            <th id="info1" class="tip">
+                <span class="ui-icon"></span>
+                <span>Ges.</span>
+            </th>
+            <th id="info2" class="tip">
+                <span class="ui-icon"></span>
+                <span>&Oslash; / x</span>
+            </th>
+            <th id="info3" class="tip">
+                <span class="ui-icon"></span>
+                <span>&Oslash; / 4</span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($collection as $game => $value): ?>
+        <tr>
+            <td><?php echo substr($game, 0, 45); ?></td>
+            <?php for ($i = 0; $i < $countcol; $i++): ?>
+            <?php if (isset($value[$i])): ?>
+                <td class="short-tr row<?php echo $i; ?>"><?php echo $value[$i]; ?></td>
+                <?php else: ?>
+                <td class="short-tr row<?php echo $i; ?> hasnotgame">0</td>
+                <?php endif; ?>
+            <?php endfor; ?>
+        </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

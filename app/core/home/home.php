@@ -46,17 +46,18 @@
         <section></section>
         <div>
             <span class="icon delete">x</span>
-            <input class="items" type="text" name="item" value="" />
+            <input class="items itemname" type="text" name="item" value="" />
             <span class="icon item"></span>
-            <input class="buy" type="text" name="buymin" value="" />
-            <input class="buy" type="text" name="buymax" value="" />
+            <input class="buy minimum" type="text" name="buymin" value="" />
+            <input class="buy maximum" type="text" name="buymax" value="" />
             <span class="icon denare"></span>
             <span class="col-2 diff"></span>
-            <input class="sell" type="text" name="selltop" value="" />
-            <input class="sell" type="text" name="sellmin" value="" />
-            <span class="col-3 market"></span>
+            <input class="sell denaren" type="text" name="selltop" value="" />
+            <input class="sell minutes" type="text" name="sellmin" value="" />
+            <span class="col-3 profit"></span>
             <span class="col-3 amount"></span>
             <span class="col-3 benefit"></span>
+            <span class="icon item right"></span>
             <br />
         </div>
     </header>
@@ -69,9 +70,9 @@
             <li class="col-3 sort" data-sort="maximum">maximum</li>
             <li class="icon">...</li>
             <li class="col-2">marge</li>
-            <li class="col-3 sort" data-sort="denare">denare</li>
+            <li class="col-3 sort" data-sort="denaren">denare</li>
             <li class="col-3 sort" data-sort="minutes">minutes</li>
-            <li class="col-3 sort" data-sort="winhour">profit</li>
+            <li class="col-3 sort" data-sort="profit">profit</li>
             <li class="col-3 sort" data-sort="amount">amount</li>
             <li class="col-3 sort" data-sort="benefit">benefit</li>
         </ul>

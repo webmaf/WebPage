@@ -164,7 +164,7 @@ function hasAddClass(elements, from, to) {
         var items = getItem(),
             pixel = 25,
             pos = items.indexOf(item.replace('+', ''));
-        return (pos == -1) ? '24px 0' : '0 ' + -(pos * pixel) + 'px';
+        return (pos == -1) ? '25px 0' : '0 ' + -(pos * pixel) + 'px';
     }
 
     function addEventDeleteRow(element) {
@@ -199,20 +199,20 @@ function hasAddClass(elements, from, to) {
                 obj = {};
                 obj.items = data;
                 ren_article.children('div').remove();
-                for (var i in obj.items) {
+                for (var index in obj.items) {
 
                     var div = cloneAppendTo(ren_article),
-                        tmp = obj.items[i][0];
+                        tmp = obj.items[index][0];
 
-                    for (var j in obj.items[i]) {
-                        div.find('input:eq(' + j + ')').val(obj.items[i][j]);
+                    for (var index2 in obj.items[index]) {
+                        div.find('input:eq(' + index2 + ')').val(obj.items[index][index2]);
                     }
 
-                    if (obj.items[i][0].lastIndexOf('+') != -1) {
+                    if (obj.items[index][0].lastIndexOf('+') != -1) {
                         div.find('span.item').append('<img src="img/renanum/star.png" />');
                     }
 
-                    div.data('row', i);
+                    div.attr('id', 'row-' + index);
                     div.find('span.item').css({
                         'backgroundPosition':getItemImage(tmp)
                     });
@@ -230,7 +230,7 @@ function hasAddClass(elements, from, to) {
                     }
 
                     div.find('span.diff').text(Math.round(selltop / buymax * 100) / 100);
-                    div.find('span.market').text(Math.round(selltop * 60 / sellmin * 10) / 10);
+                    div.find('span.profit').text(Math.round(selltop * 60 / sellmin * 10) / 10);
                     div.find('span.amount').text(Math.ceil(60 / sellmin * 24));
                     div.find('span.benefit').text(Math.ceil(selltop * div.find('span.amount').text()));
                 }
@@ -244,26 +244,48 @@ function hasAddClass(elements, from, to) {
 
     if ($('section.renanum').length > 0) {
         var ren_section = $('section.renanum'),
+            ren_copydiv = $('section.renanum header section'),
             ren_article = $('section.renanum article'),
             obj = {};
 
+        // sort functions
+
         ren_section.children('nav').find('.sort').on('click', function() {
-//            $(this).data('sort')
-            var x = [];
-            ren_article.find('.market').each(function() {
-                var key = 'hash' + $(this).text() + 'end';
-                x.push($(this).text());
-                $(this).closest('div').addClass(key);
+            var sortArr = [],
+                sortTag = ren_article.find('.' + $(this).data('sort'));
+            sortTag.each(function() {
+                var sort = $(this),
+                    div = sort.closest('div'),
+                    text = (sortTag[0].tagName == 'SPAN') ? sort.text() : sort.val();
+                sortArr.push({
+                    sortvalue:text.replace('m',''),
+                    datarowid:div.attr('id')
+                });
             });
-            x.sort(sortMax);
-            console.log(x);
 
-            var header = $('section.renanum header section');
-
-            for (var c in x) {
-                var key = 'hash' + x + 'end';
-                $('.' + key).appendTo(header);
+            if (isNaN(sortArr[0].sortvalue)) {
+                sortArr.sort(function(a, b) {
+                    var nameA = a.sortvalue.toLowerCase(),
+                        nameB = b.sortvalue.toLowerCase();
+                    if (nameA < nameB) {
+                        return -1;
+                    }
+                    if (nameA > nameB) {
+                        return 1;
+                    }
+                    return 0;
+                });
             }
+            else {
+                sortArr.sort(function(a, b) {
+                    return b.sortvalue - a.sortvalue;
+                });
+            }
+            for (var index in sortArr) {
+                $('#' + sortArr[index].datarowid).appendTo(ren_copydiv);
+            }
+            ren_copydiv.children().appendTo(ren_article);
+            changeBackground(ren_article.children('div'), 'even');
         });
 
         getData();

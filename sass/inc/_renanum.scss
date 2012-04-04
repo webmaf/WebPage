@@ -20,6 +20,9 @@ section {
             li {
                 float: left;
                 margin-left: 10px;
+                &.sort {
+                    cursor: ne-resize;
+                }
             }
         }
         article {
@@ -75,9 +78,14 @@ section {
                 }
             }
             &.item {
-                background: url(../img/renanum/items.png) no-repeat 24px 0;
+                background: url(../img/renanum/items.png) no-repeat 25px 0;
                 position: relative;
                 overflow: hidden;
+            }
+            &.right {
+                float: right;
+                margin-right: 20px;
+                opacity: 0.3;
             }
             &.denare {
                 background: url(../img/renanum/items.png) no-repeat 0 -1600px;
@@ -103,9 +111,9 @@ section {
             }
         }
         .icon {
-            width: 24px;
+            width: 25px;
         }
-        .market:before {
+        .profit:before {
             content: "= ";
         }
         .amount:before {

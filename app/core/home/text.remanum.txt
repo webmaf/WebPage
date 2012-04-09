@@ -1,13 +1,13 @@
+Schmuck,336,336,476,26m21
 Prunkgefäße,89,223,310,42m42
 Rüstungen,130,130,182,26m00
 Literatur,80,170,236,38m35
 Segel,62,247,347,59m57
 Geschirr+,0,109,151,26m06
-Farben+,133,133,189,34m47
+Farben+,133,133,188,34m47
 Olivenöl,16,60,84,15m34
 Mantel,76,304,426,81m00
 Lehrschrift,128,128,178,34m33
-Öllampen,0,20,37,7m10
 Wein,60,61,83,16m16
 Tuch,61,83,115,22m52
 Heilsalbe,165,165,230,49m17
@@ -18,6 +18,7 @@ Fischsauce+,1,1,171,40m00
 Waffen,18,69,94,22m26
 Pergament+,104,104,143,35m15
 Möbel,57,57,80,20m44
+Öllampen,0,20,27,7m10
 Pergament,35,41,58,16m40
 Olivenöl+,60,151,210,60m00
 Bleirohre,9,37,51,15m08

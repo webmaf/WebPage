@@ -1,5 +1,18 @@
-
 // Functions
+
+@mixin button-style1($from: #fcfcfc, $to: #cfcfcf){
+    background: $from;
+    background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background: -moz-linear-gradient(top, $from, $to);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '$from', endColorstr = '$to');
+}
+
+@mixin shadow-button($side: 0 1px 0, $color: #000000, $aplha: 0.5){
+    -moz-box-shadow: $side rgba($color, $aplha);
+    -webkit-box-shadow: $side rgba($color, $aplha);
+    -o-box-shadow: $side rgba($color, $aplha);
+    box-shadow: $side rgba($color, $aplha);
+}
 
 @mixin shadow-inside($side: 0, $aplha: 0.5){
     -moz-box-shadow: inset $side 2px 25px 0px rgba(#000000, $aplha);
@@ -27,6 +40,20 @@
     -webkit-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha);
     -o-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha);
     box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, $alpha);
+}
+
+@mixin border-radius($radius: 4px){
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-radius-mix($tl: 0, $tr: 0, $br: 0, $bl: 0){
+    -moz-border-radius: $tl $tr $br $bl;
+    -webkit-border-radius: $tl $tr $br $bl;
+    -o-border-radius: $tl $tr $br $bl;
+    border-radius: $tl $tr $br $bl;
 }
 
 @mixin createGridSystem($gridCols: 24, $gridWidth: 30px, $marginWidth: 10px){

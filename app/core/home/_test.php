@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 
-$file = 'text.renanum.txt';
+$file = 'text.remanum.txt';
 $json = '';
 
 

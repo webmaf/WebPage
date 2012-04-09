@@ -62,7 +62,8 @@ $page_keywords = '';
 $page_script = array(
     '<script type="text/javascript" src="js/plugins.js"></script>',
     '<script type="text/javascript" src="js/slider.js"></script>',
-    '<script type="text/javascript" src="js/script.js"></script>'
+    '<script type="text/javascript" src="js/script.js"></script>',
+    '<script type="text/javascript" src="js/remanum.js"></script>'
 );
 
 if (!empty($page)) {

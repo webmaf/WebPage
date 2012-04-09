@@ -179,6 +179,9 @@ article {
   left: 0px;
   width: 10px;
   border-right: 1px solid #8b7e5c;
+  -moz-border-radius: 0px 12px 12px 0px;
+  -webkit-border-radius: 0px 12px 12px 0px;
+  -o-border-radius: 0px 12px 12px 0px;
   border-radius: 0px 12px 12px 0px;
   box-shadow: 0px 0px 15px -4px black; }
   #blindnav.open, #blindnav:hover {
@@ -211,6 +214,7 @@ footer, .footer {
   border-top: 1px solid #574320;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px; }
 
 .js article .col-border {
@@ -264,32 +268,138 @@ footer, .footer {
       right: 7px;
       background: url(../images/slide-arrow-right.png) no-repeat 0 0; }
 
-section.renanum {
+#remanum > section {
+  display: none; }
+#remanum .tabs {
+  padding: 10px; }
+  #remanum .tabs li {
+    float: left;
+    margin-left: 10px;
+    padding: 0 10px; }
+    #remanum .tabs li button {
+      font-size: 12px;
+      width: 100px;
+      color: #555;
+      padding: 5px 10px;
+      border-radius: 3px;
+      text-shadow: 0 1px 0 #ccc;
+      background: none;
+      border: 1px solid;
+      border-color: #bcb5a2;
+      -moz-box-shadow: 0 1px 0 rgba(222, 215, 196, 0.9);
+      -webkit-box-shadow: 0 1px 0 rgba(222, 215, 196, 0.9);
+      -o-box-shadow: 0 1px 0 rgba(222, 215, 196, 0.9);
+      box-shadow: 0 1px 0 rgba(222, 215, 196, 0.9); }
+      #remanum .tabs li button:hover, #remanum .tabs li button.active {
+        background: #d2d2d2;
+        border-color: rgba(85, 85, 85, 0.6);
+        -moz-box-shadow: 0 2px 0 rgba(153, 153, 153, 0.5);
+        -webkit-box-shadow: 0 2px 0 rgba(153, 153, 153, 0.5);
+        -o-box-shadow: 0 2px 0 rgba(153, 153, 153, 0.5);
+        box-shadow: 0 2px 0 rgba(153, 153, 153, 0.5);
+        background: #fcfcfc;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#cfcfcf));
+        background: -moz-linear-gradient(top, #fcfcfc, #cfcfcf);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fcfcfc', endColorstr = '#cfcfcf'); }
+#remanum .row > span {
+  float: left;
+  margin-left: 10px;
+  display: block; }
+#remanum header {
+  display: none; }
+#remanum .row span {
+  margin-left: 10px;
+  float: left;
+  display: block;
+  height: 24px;
+  line-height: 24px; }
+#remanum span {
+  margin-left: 10px;
+  float: left;
+  display: block;
+  height: 24px;
+  line-height: 24px; }
+  #remanum span.delete {
+    -moz-border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -o-border-radius: 16px;
+    border-radius: 16px;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+    margin: 3px 0 3px 8px;
+    height: 16px;
+    line-height: 16px;
+    text-indent: 0; }
+    #remanum span.delete:before {
+      content: 'x'; }
+    #remanum span.delete:hover {
+      background-color: #b29e85; }
+  #remanum span.item {
+    background: url(../img/remanum/items.png) no-repeat 25px 0;
+    position: relative;
+    overflow: hidden; }
+  #remanum span.right {
+    float: right;
+    margin-right: 20px;
+    opacity: 0.3; }
+  #remanum span.denare {
+    background: url(../img/remanum/items.png) no-repeat 0 -1600px; }
+  #remanum span.result {
+    color: #ff0000;
+    width: 50px;
+    text-align: right; }
+  #remanum span img {
+    position: absolute;
+    top: 0;
+    right: -14px; }
+#remanum div.tooltip {
+  -moz-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, 0.5), 0px 0px 25px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, 0.5), 0px 0px 25px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, 0.5), 0px 0px 25px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 10px 15px -8px rgba(0, 0, 0, 0.5), 0px 0px 25px 0px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: -1000px;
+  left: 10px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #8b7e5c;
+  z-index: 100;
+  padding: 5px 10px 5px 0; }
+  #remanum div.tooltip ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }
+  #remanum div.tooltip li ul {
+    margin-left: 30px; }
+  #remanum div.tooltip .col-1 {
+    text-align: center; }
+#remanum .tradelist {
   position: relative;
   padding: 0 20px 50px;
   font-size: 12px; }
-  section.renanum div {
+  #remanum .tradelist div {
     margin: 4px 0; }
-  section.renanum br {
+  #remanum .tradelist br {
     clear: both; }
-  section.renanum header {
-    display: none; }
-  section.renanum nav {
+  #remanum .tradelist nav {
     border-bottom: 1px solid #8b7e5c; }
-    section.renanum nav li {
+    #remanum .tradelist nav li {
       float: left;
       margin-left: 10px; }
-      section.renanum nav li.sort {
+      #remanum .tradelist nav li.sort {
         cursor: ne-resize; }
-  section.renanum article {
+  #remanum .tradelist article {
     overflow-y: scroll;
     height: 424px; }
-  section.renanum footer {
+  #remanum .tradelist footer {
     font-size: 1em;
     text-align: left; }
-    section.renanum footer div {
+    #remanum .tradelist footer div {
       margin-top: -16px; }
-  section.renanum input {
+  #remanum .tradelist input {
     float: left;
     width: 50px;
     margin-left: 10px;
@@ -298,63 +408,30 @@ section.renanum {
     padding: 4px 5px;
     height: 16px;
     text-align: right; }
-    section.renanum input.items {
+    #remanum .tradelist input.items {
       width: 110px;
       text-align: left; }
-    section.renanum input.buy {
+    #remanum .tradelist input.buy {
       color: #ff0000; }
-    section.renanum input.sell {
+    #remanum .tradelist input.sell {
       color: #008000; }
-  section.renanum span {
-    margin-left: 10px;
-    float: left;
-    display: block;
-    height: 24px;
-    line-height: 24px; }
-    section.renanum span.delete {
-      display: inline-block;
-      cursor: pointer;
-      border: 1px solid black;
-      text-align: center;
-      border-radius: 16px;
-      box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
-      margin: 3px 0 3px 8px;
-      height: 16px;
-      line-height: 16px; }
-      section.renanum span.delete:hover {
-        background-color: #b29e85; }
-    section.renanum span.item {
-      background: url(../img/renanum/items.png) no-repeat 25px 0;
-      position: relative;
-      overflow: hidden; }
-    section.renanum span.right {
-      float: right;
-      margin-right: 20px;
-      opacity: 0.3; }
-    section.renanum span.denare {
-      background: url(../img/renanum/items.png) no-repeat 0 -1600px; }
-    section.renanum span.result {
-      color: #ff0000;
-      width: 50px;
-      text-align: right; }
-    section.renanum span img {
-      position: absolute;
-      top: 0;
-      right: -14px; }
-  section.renanum p {
+  #remanum .tradelist p {
     text-align: right;
     margin: 4px 0; }
-    section.renanum p button {
+    #remanum .tradelist p button {
       margin-left: 10px;
       padding: 5px 20px;
       width: 15%; }
-  section.renanum .icon {
-    width: 25px; }
-  section.renanum .profit:before {
-    content: "= "; }
-  section.renanum .amount:before {
-    content: "[ "; }
-  section.renanum .amount:after {
-    content: " ]"; }
-  section.renanum .even {
-    background-color: rgba(231, 225, 201, 0.3); }
+#remanum .productlist .row {
+  margin: 10px 0; }
+#remanum .icon {
+  width: 25px;
+  text-indent: -1000px; }
+#remanum .profit:before {
+  content: "= "; }
+#remanum .amount:before {
+  content: "[ "; }
+#remanum .amount:after {
+  content: " ]"; }
+#remanum .even {
+  background-color: rgba(231, 225, 201, 0.3); }

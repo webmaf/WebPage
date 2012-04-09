@@ -1,0 +1,208 @@
+// remanum
+
+#remanum {
+    > section {
+        display: none;
+    }
+    .tabs {
+        padding: 10px;
+        li {
+            float: left;
+            margin-left: 10px;
+            padding: 0 10px;
+            button {
+                font-size: 12px;
+                width: 100px;
+                color: #555;
+                padding: 5px 10px;
+                border-radius: 3px;
+                text-shadow: 0 1px 0 #ccc;
+                background: none;
+                border: 1px solid;
+                border-color: #bcb5a2;
+
+                @include shadow-button(0 1px 0, #ded7c4, 0.9);
+                &:hover, &.active {
+                    background: #d2d2d2;
+                    border-color: rgba(#555555, 0.6);
+
+                    @include shadow-button(0 2px 0, #999999, 0.5);
+                    @include button-style1();
+                }
+            }
+        }
+    }
+    .row > span {
+        float: left;
+        margin-left: 10px;
+        display: block;
+    }
+    header {
+        display: none;
+    }
+    .row {
+        span {
+            margin-left: 10px;
+            float: left;
+            display: block;
+            height: 24px;
+            line-height: 24px;
+        }
+    }
+    span {
+        margin-left: 10px;
+        float: left;
+        display: block;
+        height: 24px;
+        line-height: 24px;
+        &.delete {
+            @include border-radius(16px);
+            display: inline-block;
+            cursor: pointer;
+            border: 1px solid black;
+            text-align: center;
+            box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+            margin: 3px 0 3px 8px;
+            height: 16px;
+            line-height: 16px;
+            text-indent: 0;
+            &:before {
+                content: 'x';
+            }
+            &:hover {
+                background-color: #b29e85;
+            }
+        }
+        &.item {
+            background: url(../img/remanum/items.png) no-repeat 25px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        &.right {
+            float: right;
+            margin-right: 20px;
+            opacity: 0.3;
+        }
+        &.denare {
+            background: url(../img/remanum/items.png) no-repeat 0 -1600px;
+        }
+        &.result {
+            color: #ff0000;
+            width: 50px;
+            text-align: right;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            right: -14px;
+        }
+    }
+    div {
+        &.tooltip {
+            @include shadow-focus(0.5);
+            position: absolute;
+            top: -1000px;
+            left: 10px;
+            display: inline-block;
+            background-color: $white;
+            border: 1px solid $beige-line;
+            z-index: 100;
+            padding: 5px 10px 5px 0;
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            li ul {
+                margin-left: 30px;
+            }
+            .col-1 {
+                text-align: center;
+            }
+        }
+    }
+    .tradelist {
+        position: relative;
+        padding: 0 20px 50px;
+        font-size: 12px;
+        div {
+            margin: 4px 0;
+        }
+        br {
+            clear: both;
+        }
+        nav {
+            border-bottom: 1px solid $beige-line;
+            li {
+                float: left;
+                margin-left: 10px;
+                &.sort {
+                    cursor: ne-resize;
+                }
+            }
+        }
+        article {
+            overflow-y: scroll;
+            height: 424px;
+
+        }
+        footer {
+            font-size: 1em;
+            text-align: left;
+            div {
+                margin-top: -16px;
+            }
+        }
+        input {
+            float: left;
+            width: 50px;
+            margin-left: 10px;
+            border: none;
+            box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.5);
+            padding: 4px 5px;
+            height: 16px;
+            text-align: right;
+            &.items {
+                width: 110px;
+                text-align: left;
+            }
+            &.buy {
+                color: #ff0000;
+            }
+            &.sell {
+                color: #008000;
+            }
+        }
+        p {
+            text-align: right;
+            margin: 4px 0;
+            button {
+                margin-left: 10px;
+                padding: 5px 20px;
+                width: 15%;
+            }
+        }
+    }
+
+    .productlist {
+        .row {
+            margin: 10px 0;
+        }
+    }
+    .icon {
+        width: 25px;
+        text-indent: -1000px;
+    }
+    .profit:before {
+        content: "= ";
+    }
+    .amount:before {
+        content: "[ ";
+    }
+    .amount:after {
+        content: " ]";
+    }
+    .even {
+        background-color: rgba($beige-light, 0.3);
+    }
+}

@@ -10,7 +10,7 @@
 ob_start();
 header('content-type: application/json');
 
-$file = 'text.renanum.txt';
+$file = 'text.remanum.txt';
 $json = '';
 
 

@@ -7,7 +7,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '$from', endColorstr = '$to');
 }
 
-@mixin shadow-button($side: 0 1px 0, $color: #000000, $aplha: 0.5){
+@mixin shadow-custom($side: 0 1px 0, $color: #000000, $aplha: 0.5){
     -moz-box-shadow: $side rgba($color, $aplha);
     -webkit-box-shadow: $side rgba($color, $aplha);
     -o-box-shadow: $side rgba($color, $aplha);

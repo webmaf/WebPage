@@ -1,8 +1,31 @@
 // remanum
 
 #remanum {
+    padding: 0 20px 50px;
     > section {
         display: none;
+    }
+    button {
+        @include border-radius();
+        font-size: 12px;
+        width: 100px;
+        color: #555;
+        padding: 5px 10px;
+        text-shadow: 0 1px 0 #ccc;
+        background: none;
+        border: 1px solid;
+        border-color: #bcb5a2;
+
+        @include shadow-custom(0 1px 0, #ded7c4, 0.9);
+        &:hover, &.active {
+            background: #d2d2d2;
+            border-color: rgba(#555555, 0.6);
+            @include shadow-custom(0px 3px 2px -1px, #999999, 0.6);
+            @include button-style1();
+        }
+        &.active:hover {
+            border-color: rgba($beige-dark, 1);
+        }
     }
     .tabs {
         padding: 10px;
@@ -10,26 +33,6 @@
             float: left;
             margin-left: 10px;
             padding: 0 10px;
-            button {
-                font-size: 12px;
-                width: 100px;
-                color: #555;
-                padding: 5px 10px;
-                border-radius: 3px;
-                text-shadow: 0 1px 0 #ccc;
-                background: none;
-                border: 1px solid;
-                border-color: #bcb5a2;
-
-                @include shadow-button(0 1px 0, #ded7c4, 0.9);
-                &:hover, &.active {
-                    background: #d2d2d2;
-                    border-color: rgba(#555555, 0.6);
-
-                    @include shadow-button(0 2px 0, #999999, 0.5);
-                    @include button-style1();
-                }
-            }
         }
     }
     .row > span {
@@ -57,6 +60,7 @@
         line-height: 24px;
         &.delete {
             @include border-radius(16px);
+            @include shadow-custom(0px 3px 2px -1px, #999999, 0.6);
             display: inline-block;
             cursor: pointer;
             border: 1px solid black;
@@ -123,7 +127,6 @@
     }
     .tradelist {
         position: relative;
-        padding: 0 20px 50px;
         font-size: 12px;
         div {
             margin: 4px 0;
@@ -143,7 +146,7 @@
         }
         article {
             overflow-y: scroll;
-            height: 424px;
+            height: 284px;
 
         }
         footer {
@@ -154,11 +157,13 @@
             }
         }
         input {
+            @include border-radius();
+            @include shadow-custom(inset 0px 2px 2px -2px, #000000, 0.9);
             float: left;
             width: 50px;
             margin-left: 10px;
             border: none;
-            box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.5);
+            //box-shadow: 2px 2px 10px -2px rgba(0, 0, 0, 0.5);
             padding: 4px 5px;
             height: 16px;
             text-align: right;
@@ -185,8 +190,18 @@
     }
 
     .productlist {
+
         .row {
             margin: 10px 0;
+        }
+        .production {
+            margin: 20px 0 0;
+            padding: 5px 0;
+            border-top: 1px solid $beige-line;
+            background-color: $beige-light;
+        }
+        .icon {
+            cursor: pointer;
         }
     }
     .icon {

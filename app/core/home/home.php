@@ -61,14 +61,14 @@
             <section></section>
             <div>
                 <span class="icon delete"></span>
-                <input class="items itemname" type="text" name="item" value="" />
+                <input class="items itemname" type="text" name="item" value="" placeholder="Schafe" />
                 <span class="icon item"></span>
-                <input class="buy minimum" type="text" name="buymin" value="" />
-                <input class="buy maximum" type="text" name="buymax" value="" />
+                <input class="buy minimum" type="text" name="buymin" value="" placeholder="40" />
+                <input class="buy maximum" type="text" name="buymax" value="" placeholder="50" />
                 <span class="icon denare"></span>
                 <span class="col-2 diff"></span>
-                <input class="sell denaren" type="text" name="selltop" value="" />
-                <input class="sell minutes" type="text" name="sellmin" value="" />
+                <input class="sell denaren" type="text" name="selltop" value="" placeholder="100" />
+                <input class="sell minutes" type="text" name="sellmin" value="" placeholder="00m00" />
                 <span class="col-3 profit"></span>
                 <span class="col-3 amount"></span>
                 <span class="col-3 benefit"></span>
@@ -94,8 +94,8 @@
         </nav>
         <article></article>
         <p>
-            <button name="adds" value="adds"> add row</button>
-            <button name="save" value="save"> save data</button>
+            <button name="adds" value="adds" class="active"> add row</button>
+            <button name="save" value="save" class="active"> save data</button>
         </p>
         <footer>
             <div><strong>Notizen:</strong></div>
@@ -107,7 +107,6 @@
         <header>
             <section></section>
             <div class="row">
-                <span class="icon item"></span>
                 <span class="col-10 product"></span>
             </div>
         </header>

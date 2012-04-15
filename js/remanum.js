@@ -110,6 +110,20 @@ function getItemCategory(item) {
     return getCategory()[id];
 }
 
+function getItemsByExtras(item) {
+    var items = getList(),
+        array = [];
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].hasOwnProperty('extras')) {
+            var pos = items[i].extras.lastIndexOf(item);
+            if (pos !== -1) {
+                array.push(items[i].item);
+            }
+        }
+    }
+    return array;
+}
+
 function getCategoryItems(category) {
     var id = (isNaN(category)) ? getCategoryId(category) : category,
         cat = getList(),
@@ -163,7 +177,6 @@ function multiEmpty(value) {
 function mouseOverItem(item, recursive) {
     var id = (isNaN(item)) ? getItemId(item) : item,
         obj = getList()[id],
-//            cat = obj.category,
         str = (!recursive) ? '<div class="row"><span class="icon item" style="background-position: ' + getItemImage(getItemName(id)) + ';"></span><span class="col-6">' + obj.item + '</span></div>' : '';
 
     if (obj.hasOwnProperty('extras')) {
@@ -185,10 +198,47 @@ function mouseOverItem(item, recursive) {
     return str;
 }
 
+function createItemSpan(element, array) {
+    for (var i = 0; i < array.length; i++) {
+        $('<span class="icon item"></span>').css({
+            'background-position':getItemImage(array[i])
+        }).text(array[i]).appendTo(element);
+    }
+}
+
+function createTooltip(element, tooltip) {
+    element.find('.item').not('.right').on('mouseenter', function() {
+        var moi = mouseOverItem($(this).text());
+        tooltip.html('').append(moi).show();
+
+        if ($(this).closest('section').hasClass('tradelist')) {
+            $(this).on('mousemove', function(e) {
+                var coordY = (e.pageY) ? e.pageY : window.event.y,
+                    coordX = $(this).position().left,
+                    reduce = Math.round(tooltip.height() / 2);
+                tooltip.css({
+                    top:(coordY - reduce) + 'px',
+                    left:(coordX + 60) + 'px'
+                });
+            });
+        }
+        else {
+            tooltip.css({
+                top:(element.offset().top - 10) + 'px',
+                left:'700px'
+            });
+        }
+    });
+    element.on('mouseleave', function() {
+        tooltip.hide();
+    });
+}
+
 /**
  * Run if DOM are rendered
  */
 (function() {
+
     function getData() {
         obj.action = 'read';
         $.ajax({
@@ -303,50 +353,7 @@ function mouseOverItem(item, recursive) {
             }
         });
 
-        function createTooltip(element) {
-            element.find('.item').on('mouseenter', function() {
-                var lol = mouseOverItem($(this).text());
-                trade_tooltip.html('').append(lol).show();
-                if ($(this).closest('section').hasClass('tradelist')) {
-                    $(this).on('mousemove', function(e) {
-                        var vy = (e.pageY) ? e.pageY : window.event.y,
-                            vx = 0;//element.offset().top
-                        trade_tooltip.css({
-                            top:(vy - vx) + 'px',
-                            left:'10px'
-                        });
-                    });
-                }
-                else {
-                    trade_tooltip.css({
-                        top:(element.offset().top - 10) + 'px',
-                        left:'700px'
-                    });
-                }
-            });
-            element.on('mouseleave', function() {
-                trade_tooltip.hide();
-            });
-        }
-
-        createTooltip(trade_article);
-
-//        trade_article.find('.item').on('mouseenter', function() {
-//
-//            var lol = mouseOverItem($(this).parent().find('.itemname').val());
-//            trade_tooltip.html('').append(lol).show();
-//            $(this).on('mousemove', function(e) {
-//                var vy = (e.pageY) ? e.pageY : window.event.y,
-//                    vx = trade_article.offset().top;
-//                trade_tooltip.css({
-//                    top:(vy - vx + 40) + 'px'
-//                });
-//            });
-//        });
-//        trade_article.on('mouseleave', function() {
-//            trade_tooltip.hide();
-//        });
-
+        createTooltip(trade_article, trade_tooltip);
         addEventDeleteRow(trade_section);
         trade_section.find('button[name=adds]').on('click', function() {
             var trade_lastrow = cloneAppendTo(trade_article);
@@ -387,19 +394,30 @@ function mouseOverItem(item, recursive) {
         var prod_section = $('#remanum .productlist'),
             prod_copydiv = $('#remanum .productlist header div'),
             prod_article = $('#remanum .productlist article'),
-            categoryName = getCategory();
+            categoryName = getCategory(),
+            categoryAdds = 'Verwendung';
 
-        for (var index in categoryName) {
-            var div = prod_copydiv.clone().appendTo(prod_article);
-            div.find('.product').text(categoryName[index]).css({ 'background-color':'#' + getCategoryColor(getCategoryId(categoryName[index]))});
-            var oo = getCategoryItems(categoryName[index]);
-            for (var index2 in oo) {
-                $('<span class="icon item"></span>').css({
-                    'background-position':getItemImage(oo[index2])
-                }).text(oo[index2]).appendTo(div);
-            }
+        // remove Legionswaren and Währung
+        categoryName = categoryName.slice(0, -2);
+
+        for (var i = 0; i < categoryName.length; i++) {
+            var div = prod_copydiv.clone().appendTo(prod_article),
+                items = getCategoryItems(categoryName[i]);
+
+            div.find('.product').text(categoryName[i]);//.css({ 'background-color':'#' + getCategoryColor(getCategoryId(categoryName[i]))});
+            createItemSpan(div, items);
         }
-        createTooltip(prod_article);
+        if (categoryAdds != '') {
+            div = prod_copydiv.clone().appendTo(prod_article).find('.product').text(categoryAdds).parent().addClass('production');
+            prod_article.find('.item').on('click', function() {
+                var items = getItemsByExtras($(this).text());
+                items.splice(0, 0, $(this).text(), '');
+                div.find('span').slice(1).remove();
+                createItemSpan(div, items);
+                div.find('.item').eq(1).attr('style', '').removeClass('icon item').addClass('col-10').text('benötigt für');
+            });
+        }
+        createTooltip(prod_article, trade_tooltip);
 
         // navigation
 

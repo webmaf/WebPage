@@ -1,17 +1,12 @@
 /**
  * === REMANUM (remanum) ===
- * @param element
- * @param mode
  */
 
 //var items = ['Blei', 'Eisen', 'Gold', 'Holz', 'Kohle', 'Kräuter', 'Leder', 'Rohglas', 'Tonerde', 'Balken', 'Bleirohre', 'Elfenbein', 'Fensterglas', 'Marmor', 'Naturstein', 'Statuen', 'Ziegel', 'Fischsauce', 'Getreide', 'Gewürze', 'Oliven', 'Olivenöl', 'Salz', 'Trauben', 'Wein', 'Esel', 'Geflügel', 'Pferde', 'Rinder', 'Schafe', 'Ziegen', 'Wilde Tiere', 'Amphoren', 'Geschirr', 'Heilsalbe', 'Möbel', 'Öllampen', 'Pergament', 'Schuhe', 'Schriftrollen', 'Flachs', 'Leinen', 'Mantel', 'Seide', 'Toga', 'Tuch', 'Tunika', 'Wolle', 'Karren', 'Pflug', 'Rüstungen', 'Segel', 'Waffen', 'Webstuhl', 'Werkzeug', 'Edelsteine', 'Farben', 'Glaswaren', 'Lehrschrift', 'Literatur', 'Parfüm', 'Prunkgefäße', 'Räucherwerk', 'Schmuck', 'Denare'];
 
-function changeBackground(element, mode) {
-    var type = mode || 'even';
-    element.removeClass(type).filter(':' + type).addClass(type);
-}
 
 function getList() {
+
     var list = [
         {item:'Blei', category:2},
         {item:'Eisen', category:2},
@@ -78,39 +73,52 @@ function getList() {
         {item:'Räucherwerk', category:1},
         {item:'Schmuck', category:1, extras:['Gold', 'Edelsteine']}
     ];
+
     list.push({item:'Denare', category:9});
     return list;
 }
 
+
 function getItem() {
+
     var items = getList(),
         array = [];
-    for (var index in items) {
-        array.push(items[index].item);
+    for (var i = 0; i < items.length; i++) {
+        array.push(items[i].item);
     }
     return array;
 }
 
+
 function getItemId(item) {
+
     return getItem().indexOf(item.replace('+', ''));
 }
 
+
 function getItemName(id) {
+
     return getItem()[id];
 }
 
+
 function getItemImage(item) {
+
     var pixel = 25,
         pos = getItemId(item);
     return (pos == -1) ? '25px 0' : '0 ' + -(pos * pixel) + 'px';
 }
 
+
 function getItemCategory(item) {
+
     var id = (isNaN(item)) ? getItemId(item) : item;
     return getCategory()[id];
 }
 
+
 function getItemsByExtras(item) {
+
     var items = getList(),
         array = [];
     for (var i = 0; i < items.length; i++) {
@@ -124,38 +132,57 @@ function getItemsByExtras(item) {
     return array;
 }
 
+
 function getCategoryItems(category) {
+
     var id = (isNaN(category)) ? getCategoryId(category) : category,
         cat = getList(),
         array = [];
-    for (var index in cat) {
-        if (cat[index].hasOwnProperty('category')) {
-            if (cat[index].category == id) {
-                array.push(cat[index].item);
+    for (var i = 0; i < cat.length; i++) {
+        if (cat[i].hasOwnProperty('category')) {
+            if (cat[i].category == id) {
+                array.push(cat[i].item);
             }
         }
     }
     return array;
 }
 
+
 function getCategory() {
+
     return ['Baumaterial', 'Luxuswaren', 'Rohstoffe', 'Ausrüstung', 'Tiere', 'Textilien', 'Nahrungsmittel', 'Gebrauchtwaren', 'Legionswaren', 'Währung'];
 }
 
+
 function getCategoryId(category) {
+
     return getCategory().indexOf(category);
 }
 
+
 function getCategoryName(id) {
+
     return getCategory()[id || 9];
 }
 
+
 function getCategoryColor(id) {
+
     var color = ['CCCCDD', 'CCDDCC', 'CCCCCC', 'DDCCCC', 'DDDCCC', 'CC88DD', 'CCDD88', '663300', '000000'];
     return color[id || 0];
 }
 
+
+function changeBackground(element, mode) {
+
+    var type = mode || 'even';
+    element.removeClass(type).filter(':' + type).addClass(type);
+}
+
+
 function addEventDeleteRow(element) {
+
     if (element.length > 0) {
         element.find('span.delete').on('click', function() {
             $(this).closest('div').remove();
@@ -163,18 +190,24 @@ function addEventDeleteRow(element) {
     }
 }
 
+
 function cloneAppendTo(element) {
+
     var row = element.closest('section').children('header').find('div').clone().appendTo(element);
     addEventDeleteRow(row);
     return row;
 }
 
+
 function multiEmpty(value) {
+
     var x = parseFloat(value);
     return (x == false || x < 1 || x == '' || isNaN(x) ) ? 1 : x;
 }
 
+
 function mouseOverItem(item, recursive) {
+
     var id = (isNaN(item)) ? getItemId(item) : item,
         obj = getList()[id],
         str = (!recursive) ? '<div class="row"><span class="icon item" style="background-position: ' + getItemImage(getItemName(id)) + ';"></span><span class="col-6">' + obj.item + '</span></div>' : '';
@@ -182,14 +215,14 @@ function mouseOverItem(item, recursive) {
     if (obj.hasOwnProperty('extras')) {
         if (obj.extras.length > 0) {
             str += '<ul>';
-            for (var index in obj.extras) {
+            for (var i = 0; i < obj.extras.length; i++) {
                 str += '<li>' +
                     '<div class="row">' +
                     '<span class="col-1">+</span>' +
-                    '<span class="icon item" style="background-position: ' + getItemImage(obj.extras[index]) + ';"></span>' +
-                    '<span class="column">' + obj.extras[index] + '</span>' +
+                    '<span class="icon item" style="background-position: ' + getItemImage(obj.extras[i]) + ';"></span>' +
+                    '<span class="column">' + obj.extras[i] + '</span>' +
                     '</div>' +
-                    mouseOverItem(obj.extras[index], true) +
+                    mouseOverItem(obj.extras[i], true) +
                     '</li>';
             }
             str += '</ul>';
@@ -198,7 +231,9 @@ function mouseOverItem(item, recursive) {
     return str;
 }
 
+
 function createItemSpan(element, array) {
+
     for (var i = 0; i < array.length; i++) {
         $('<span class="icon item"></span>').css({
             'background-position':getItemImage(array[i])
@@ -206,7 +241,9 @@ function createItemSpan(element, array) {
     }
 }
 
+
 function createTooltip(element, tooltip) {
+
     element.find('.item').not('.right').on('mouseenter', function() {
         var moi = mouseOverItem($(this).text());
         tooltip.html('').append(moi).show();
@@ -234,75 +271,133 @@ function createTooltip(element, tooltip) {
     });
 }
 
+
+function getData(obj, article, tooltip) {
+
+    obj.action = 'read';
+
+    $.ajax({
+        type:'POST',
+        async:false,
+        url:'app/core/home/json.remanum.php',
+        cache:false,
+        data:obj,
+        dataType:'json',
+        success:function(data) {
+            obj = {};
+            obj.items = data;
+            article.children('div').remove();
+            for (var i = 0; i < obj.items.length; i++) {
+
+                var div = cloneAppendTo(article),
+                    tmp = obj.items[i][0];
+
+                for (var j = 0; j < obj.items[i].length; j++) {
+                    div.find('input:eq(' + j + ')').val(obj.items[i][j]);
+                }
+
+                div.attr('id', 'row-' + i);
+                div.find('span.item').css({
+                    'backgroundPosition':getItemImage(tmp)
+                }).text(tmp);
+
+                if (tmp.lastIndexOf('+') != -1) {
+                    div.find('span.item').append('<img src="img/remanum/star.png" />');
+                }
+
+                var sellmin = div.find('input[name=sellmin]').val(),
+                    selltop = multiEmpty(div.find('input[name=selltop]').val()),
+                    buymax = multiEmpty(div.find('input[name=buymax]').val());
+
+                tmp = sellmin.indexOf('m');
+                if (tmp != -1) {
+                    sellmin = multiEmpty(sellmin.slice(0, tmp)) + sellmin.slice(tmp + 1) / 60;
+                }
+                else {
+                    sellmin = multiEmpty(sellmin);
+                }
+
+                div.find('span.diff').text(Math.round(selltop / buymax * 100) / 100);
+                div.find('span.profit').text(Math.round(selltop * 60 / sellmin * 10) / 10);
+                div.find('span.amount').text(Math.ceil(60 / sellmin * 24));
+                div.find('span.benefit').text(Math.ceil(selltop * div.find('span.amount').text()));
+            }
+            changeBackground(article.children('div'), 'even');
+            createTooltip(article, tooltip);
+        },
+        error:function() {
+            alert('error: read');
+        }
+    });
+}
+
+
+function sortable(array) {
+
+    var sortArr = array || [];
+
+    if (isNaN(sortArr[0].sortvalue)) {
+        sortArr = sortNumeric(sortArr);
+    }
+    else {
+        sortArr = sortAlphabet(sortArr);
+    }
+    return sortArr;
+}
+
+
+function sortNumeric(array) {
+
+    array.sort(function(a, b) {
+        var nameA = a.sortvalue.toLowerCase(),
+            nameB = b.sortvalue.toLowerCase();
+        if (nameA < nameB) {
+            return -1;
+        }
+        if (nameA > nameB) {
+            return 1;
+        }
+        return 0;
+    });
+    return array;
+}
+
+
+function sortAlphabet(array) {
+
+    array.sort(function(a, b) {
+        return b.sortvalue - a.sortvalue;
+    });
+    return array;
+}
+
 /**
  * Run if DOM are rendered
  */
 (function() {
 
-    function getData() {
-        obj.action = 'read';
-        $.ajax({
-            type:'POST',
-            async:false,
-            url:'app/core/home/json.remanum.php',
-            cache:false,
-            data:obj,
-            dataType:'json',
-            success:function(data) {
-                obj = {};
-                obj.items = data;
-                trade_article.children('div').remove();
-                for (var index in obj.items) {
-
-                    var div = cloneAppendTo(trade_article),
-                        tmp = obj.items[index][0];
-
-                    for (var index2 in obj.items[index]) {
-                        div.find('input:eq(' + index2 + ')').val(obj.items[index][index2]);
-                    }
-
-                    div.attr('id', 'row-' + index);
-                    div.find('span.item').css({
-                        'backgroundPosition':getItemImage(tmp)
-                    }).text(tmp);
-
-                    if (tmp.lastIndexOf('+') != -1) {
-                        div.find('span.item').append('<img src="img/remanum/star.png" />');
-                    }
-
-                    var sellmin = div.find('input[name=sellmin]').val(),
-                        selltop = multiEmpty(div.find('input[name=selltop]').val()),
-                        buymax = multiEmpty(div.find('input[name=buymax]').val());
-
-                    tmp = sellmin.indexOf('m');
-                    if (tmp != -1) {
-                        sellmin = multiEmpty(sellmin.slice(0, tmp)) + sellmin.slice(tmp + 1) / 60;
-                    }
-                    else {
-                        sellmin = multiEmpty(sellmin);
-                    }
-
-                    div.find('span.diff').text(Math.round(selltop / buymax * 100) / 100);
-                    div.find('span.profit').text(Math.round(selltop * 60 / sellmin * 10) / 10);
-                    div.find('span.amount').text(Math.ceil(60 / sellmin * 24));
-                    div.find('span.benefit').text(Math.ceil(selltop * div.find('span.amount').text()));
-                }
-                changeBackground(trade_article.children('div'), 'even');
-            },
-            error:function() {
-                alert('error: read');
-            }
-        });
-    }
-
     if ($('#remanum').length > 0) {
 
-        // tradelist
+        // global and navigation
+        // =======================================================
+        var tooltip = $('#remanum .tooltip');
 
+        $('#remanum > nav li button').on('click', function() {
+            var buttons = $('#remanum > nav li button'),
+                section = $('#remanum > section'),
+                isclass = ($(this).data('tab') == '') ? '' : '.' + $(this).data('tab');
+
+            buttons.removeClass('active');
+            $(this).addClass('active');
+            section.hide().filter(isclass).show();
+        });
+        $('#remanum > nav li button').first().trigger('click');
+
+        // tradelist
+        // =======================================================
         var trade_section = $('#remanum .tradelist'),
-            trade_copydiv = $('#remanum .tradelist header section'),
-            trade_article = $('#remanum .tradelist article'),
-            trade_tooltip = $('#remanum .tooltip'),
+            trade_copydiv = trade_section.find('header section'),
+            trade_article = trade_section.find('article'),
             obj = {};
 
         // sort functions
@@ -318,33 +413,16 @@ function createTooltip(element, tooltip) {
                     datarowid:div.attr('id')
                 });
             });
-
-            if (isNaN(sortArr[0].sortvalue)) {
-                sortArr.sort(function(a, b) {
-                    var nameA = a.sortvalue.toLowerCase(),
-                        nameB = b.sortvalue.toLowerCase();
-                    if (nameA < nameB) {
-                        return -1;
-                    }
-                    if (nameA > nameB) {
-                        return 1;
-                    }
-                    return 0;
-                });
-            }
-            else {
-                sortArr.sort(function(a, b) {
-                    return b.sortvalue - a.sortvalue;
-                });
-            }
-            for (var index in sortArr) {
-                $('#' + sortArr[index].datarowid).appendTo(trade_copydiv);
+            sortArr = sortable(sortArr);
+            for (var i = 0; i < sortArr.length; i++) {
+                $('#' + sortArr[i].datarowid).appendTo(trade_copydiv);
             }
             trade_copydiv.children().appendTo(trade_article);
             changeBackground(trade_article.children('div'), 'even');
         });
 
-        getData();
+        // collect data
+        getData(obj, trade_article, tooltip);
         trade_article.sortable({
             opacity:0.6,
             items:'div',
@@ -353,8 +431,9 @@ function createTooltip(element, tooltip) {
             }
         });
 
-        createTooltip(trade_article, trade_tooltip);
         addEventDeleteRow(trade_section);
+
+        // button functions
         trade_section.find('button[name=adds]').on('click', function() {
             var trade_lastrow = cloneAppendTo(trade_article);
             $(trade_lastrow).find('input.items').focus();
@@ -378,10 +457,9 @@ function createTooltip(element, tooltip) {
                 cache:false,
                 data:obj,
                 dataType:'json',
-                success:function(data) {
-                    console.log('save ' + data);
+                success:function() {
                     obj = {};
-                    getData();
+                    getData(obj, trade_article, tooltip);
                 },
                 error:function() {
                     alert('error: save');
@@ -390,21 +468,22 @@ function createTooltip(element, tooltip) {
         });
 
         // productlist
-
+        // =======================================================
         var prod_section = $('#remanum .productlist'),
-            prod_copydiv = $('#remanum .productlist header div'),
-            prod_article = $('#remanum .productlist article'),
+            prod_copydiv = prod_section.find('header div'),
+            prod_article = prod_section.find('article'),
             categoryName = getCategory(),
             categoryAdds = 'Verwendung';
 
         // remove Legionswaren and Währung
         categoryName = categoryName.slice(0, -2);
 
+        // build Category and add Items
         for (var i = 0; i < categoryName.length; i++) {
             var div = prod_copydiv.clone().appendTo(prod_article),
                 items = getCategoryItems(categoryName[i]);
 
-            div.find('.product').text(categoryName[i]);//.css({ 'background-color':'#' + getCategoryColor(getCategoryId(categoryName[i]))});
+            div.find('.product').text(categoryName[i]);
             createItemSpan(div, items);
         }
         if (categoryAdds != '') {
@@ -417,19 +496,7 @@ function createTooltip(element, tooltip) {
                 div.find('.item').eq(1).attr('style', '').removeClass('icon item').addClass('col-10').text('benötigt für');
             });
         }
-        createTooltip(prod_article, trade_tooltip);
+        createTooltip(prod_article, tooltip);
 
-        // navigation
-
-        $('#remanum > nav li button').on('click', function() {
-            var buttons = $('#remanum > nav li button'),
-                section = $('#remanum > section'),
-                isclass = ($(this).data('tab') == '') ? '' : '.' + $(this).data('tab');
-
-            buttons.removeClass('active');
-            $(this).addClass('active');
-            section.hide().filter(isclass).show();
-        });
-        $('#remanum > nav li button').first().trigger('click');
     }
 })();

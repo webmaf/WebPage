@@ -53,7 +53,10 @@
     </nav>
 
     <section class="prolog">
-
+        <article>
+            <div><strong>Notizen:</strong></div>
+            <code>$('.remusChat').attr('style', 'left:0; top:0').find('.body').css({height: '730px'}).find('.timeline').css({height: '705px'})</code>
+        </article>
     </section>
 
     <section class="tradelist">
@@ -97,10 +100,6 @@
             <button name="adds" value="adds" class="active"> add row</button>
             <button name="save" value="save" class="active"> save data</button>
         </p>
-        <footer>
-            <div><strong>Notizen:</strong></div>
-            <code>$('.remusChat').attr('style', 'left:0; top:0').find('.body').css({height: '730px'}).find('.timeline').css({height: '705px'})</code>
-        </footer>
     </section>
 
     <section class="productlist">

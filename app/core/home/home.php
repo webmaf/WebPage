@@ -49,6 +49,7 @@
             <li><button data-tab="prolog">nothing</button></li>
             <li><button data-tab="tradelist">tradelist</button></li>
             <li><button data-tab="productlist">productlist</button></li>
+            <li><button data-tab="buildings">buildings</button></li>
         </ul>
     </nav>
 
@@ -110,5 +111,27 @@
             </div>
         </header>
         <article></article>
+    </section>
+
+    <section class="buildings">
+        <header>
+            <section></section>
+            <div class="row">
+                <span class="col-10 product">Apotheke</span>
+                <div class="row">
+                    <span class="icon item"></span>
+                </div>
+            </div>
+        </header>
+        <article>
+
+            <div class="row">
+                <span class="col-10 product">Apotheke</span>
+                <div class="row">
+                    <span class="icon item"></span>
+                </div>
+            </div>
+
+        </article>
     </section>
 </div>

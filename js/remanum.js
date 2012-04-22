@@ -2,86 +2,265 @@
  * === REMANUM (remanum) ===
  */
 
-//var items = ['Blei', 'Eisen', 'Gold', 'Holz', 'Kohle', 'Kräuter', 'Leder', 'Rohglas', 'Tonerde', 'Balken', 'Bleirohre', 'Elfenbein', 'Fensterglas', 'Marmor', 'Naturstein', 'Statuen', 'Ziegel', 'Fischsauce', 'Getreide', 'Gewürze', 'Oliven', 'Olivenöl', 'Salz', 'Trauben', 'Wein', 'Esel', 'Geflügel', 'Pferde', 'Rinder', 'Schafe', 'Ziegen', 'Wilde Tiere', 'Amphoren', 'Geschirr', 'Heilsalbe', 'Möbel', 'Öllampen', 'Pergament', 'Schuhe', 'Schriftrollen', 'Flachs', 'Leinen', 'Mantel', 'Seide', 'Toga', 'Tuch', 'Tunika', 'Wolle', 'Karren', 'Pflug', 'Rüstungen', 'Segel', 'Waffen', 'Webstuhl', 'Werkzeug', 'Edelsteine', 'Farben', 'Glaswaren', 'Lehrschrift', 'Literatur', 'Parfüm', 'Prunkgefäße', 'Räucherwerk', 'Schmuck', 'Denare'];
+
+var dataRemanum = function() {
+
+    var _defaults = {
+            "var1": "value1",
+            "var2": "value2"
+        },
+        _opts,
+        _cityLots,
+        _countryLots,
+        _estateLots,
+        _itemList,
+        _shortList;
+
+    // private funcs
+
+    function _getCityLots() {
+
+        _cityLots = [
+            {name: 'Apotheke', category: 1, production: ['Heilsalbe'], upgrade: []},
+            {name: 'Brennerei', category: 1, production: ['Amphoren'], upgrade: []},
+            {name: 'Färberei', category: 1, production: ['Farben'], upgrade: []},
+            {name: 'Garummanufaktur', category: 1, production: ['Fischsauce'], upgrade: []},
+            {name: 'Gerberei', category: 1, production: ['Leder', 'Pergament'], upgrade: []},
+            {name: 'Glasbläserei', category: 1, production: ['Fensterglas', 'Glaswaren'], upgrade: []},
+            {name: 'Goldschmied', category: 1, production: ['Prunkgefäße', 'Schmuck'], upgrade: []},
+            {name: 'Kelterei', category: 1, production: ['Wein'], upgrade: []},
+            {name: 'Lederwerkstatt', category: 1, production: ['Rüstungen', 'Schuhe'], upgrade: []},
+            {name: 'Schmied', category: 1, production: ['Waffen', 'Werkzeug'], upgrade: []},
+            {name: 'Schneiderei', category: 1, production: ['Mantel', 'Toga', 'Tunika'], upgrade: []},
+            {name: 'Schreibstube', category: 1, production: ['Lehrschrift', 'Literatur'], upgrade: []},
+            {name: 'Schreinerei', category: 1, production: ['Möbel', 'Webstuhl'], upgrade: []},
+            {name: 'Segelmacher', category: 1, production: ['Segel'], upgrade: []},
+            {name: 'Spenglerei', category: 1, production: ['Bleirohre'], upgrade: []},
+            {name: 'Steinmetz', category: 1, production: ['Statuen'], upgrade: []},
+            {name: 'Stellmacher', category: 1, production: ['Karren', 'Pflug'], upgrade: []},
+            {name: 'Sägewerk', category: 1, production: ['Balken'], upgrade: []},
+            {name: 'Töpferei', category: 1, production: ['Geschirr', 'Öllampen'], upgrade: []},
+//            upgrade: [
+//                {denare: 1430, items: [ {name: 'Tonerde', amount: 240}, {name: 'Möbel', amount: 20} ], sale: 1500},
+//                {denare: 4280, items: [ {name: 'Tonerde', amount: 720}, {name: 'Möbel', amount: 60} ]},
+//                {denare: 7560, items: [ {name: 'Tonerde', amount: 1272}, {name: 'Möbel', amount: 106}, {name: 'Amphoren', amount: 784} ], sale: 8195},
+//                {denare: 11550, items: [ {name: 'Tonerde', amount: 1937}, {name: 'Möbel', amount: 161}, {name: 'Amphoren', amount: 1194} ], sale: 19807},
+//                {denare: 16550, items: [ {name: 'Tonerde', amount: 2777}, {name: 'Möbel', amount: 231}, {name: 'Amphoren', amount: 1712} ], sale: 37499},
+//                {denare: 23100, items: [ {name: 'Naturstein', amount: 3467}, {name: 'Karren', amount: 130}, {name: 'Farbe', amount: 356} ], sale: 64642}
+//            ]
+//        },
+            {name: 'Weberei', category: 1, production: ['Leinen', 'Tuch'], upgrade: []},
+            {name: 'Ölpresse', category: 1, production: ['Olivenöl'], upgrade: []}
+        ];
+    }
 
 
-function getList() {
+    function _getCountryLots() {
 
-    var list = [
-        {item:'Blei', category:2},
-        {item:'Eisen', category:2},
-        {item:'Gold', category:2, extras:['Kohle']},
-        {item:'Holz', category:2},
-        {item:'Kohle', category:2},
-        {item:'Kräuter', category:2},
-        {item:'Leder', category:2, extras:['Rinder', 'Salz']},
-        {item:'Rohglas', category:2},
-        {item:'Tonerde', category:2},
-        {item:'Balken', category:0, extras:['Holz']},
-        {item:'Bleirohre', category:0, extras:['Blei']},
-        {item:'Elfenbein', category:0},
-        {item:'Fensterglas', category:0, extras:['Rohglas', 'Blei']},
-        {item:'Marmor', category:0, extras:['Werkzeug']},
-        {item:'Naturstein', category:0},
-        {item:'Statuen', category:0, extras:['Werkzeug', 'Naturstein']},
-        {item:'Ziegel', category:0, extras:['Kohle']},
-        {item:'Fischsauce', category:6, extras:['Amphoren', 'Salz']},
-        {item:'Getreide', category:6, extras:['Pflug']},
-        {item:'Gewürze', category:6},
-        {item:'Oliven', category:6},
-        {item:'Olivenöl', category:6, extras:['Amphoren', 'Oliven']},
-        {item:'Salz', category:6},
-        {item:'Trauben', category:6},
-        {item:'Wein', category:6, extras:['Amphoren', 'Trauben']},
-        {item:'Esel', category:4},
-        {item:'Geflügel', category:4},
-        {item:'Pferde', category:4, extras:['Getreide']},
-        {item:'Rinder', category:4},
-        {item:'Schafe', category:4},
-        {item:'Ziegen', category:4},
-        {item:'Wilde Tiere', category:4},
-        {item:'Amphoren', category:7, extras:['Tonerde']},
-        {item:'Geschirr', category:7, extras:['Tonerde', 'Kohle']},
-        {item:'Heilsalbe', category:7, extras:['Kräuter', 'Olivenöl']},
-        {item:'Möbel', category:7, extras:['Balken', 'Werkzeug']},
-        {item:'Öllampen', category:7, extras:['Rohglas', 'Tonerde']},
-        {item:'Pergament', category:7, extras:['Kräuter', 'Ziegen']},
-        {item:'Schuhe', category:7, extras:['Leder']},
-        {item:'Schriftrollen', category:7},
-        {item:'Flachs', category:5},
-        {item:'Leinen', category:5, extras:['Flachs', 'Webstuhl']},
-        {item:'Mantel', category:5, extras:['Farben', 'Tuch']},
-        {item:'Seide', category:5},
-        {item:'Toga', category:5, extras:['Farben', 'Seide']},
-        {item:'Tuch', category:5, extras:['Wolle', 'Webstuhl']},
-        {item:'Tunika', category:5, extras:['Leinen']},
-        {item:'Wolle', category:5},
-        {item:'Karren', category:3, extras:['Holz', 'Leder']},
-        {item:'Pflug', category:3, extras:['Balken', 'Eisen']},
-        {item:'Rüstungen', category:3, extras:['Leinen', 'Tuch', 'Leder']},
-        {item:'Segel', category:3, extras:['Leinen', 'Tuch']},
-        {item:'Waffen', category:3, extras:['Kohle', 'Eisen']},
-        {item:'Webstuhl', category:3, extras:['Werkzeug', 'Holz']},
-        {item:'Werkzeug', category:3, extras:['Eisen']},
-        {item:'Edelsteine', category:1},
-        {item:'Farben', category:1, extras:['Amphoren', 'Kräuter']},
-        {item:'Glaswaren', category:1, extras:['Rohglas', 'Kohle']},
-        {item:'Lehrschrift', category:1, extras:['Pergament', 'Geflügel']},
-        {item:'Literatur', category:1, extras:['Schriftrollen', 'Öllampen']},
-        {item:'Parfüm', category:1},
-        {item:'Prunkgefäße', category:1, extras:['Gold', 'Glaswaren']},
-        {item:'Räucherwerk', category:1},
-        {item:'Schmuck', category:1, extras:['Gold', 'Edelsteine']}
-    ];
+        _countryLots = [
+            {name: 'Eselzucht', category: 2, production: ['Esel'], upgrade: []},
+            {name: 'Pferdezucht', category: 2, production: ['Pferde'], upgrade: []},
+            {name: 'Schafzucht', category: 2, production: ['Schafe', 'wolle'], upgrade: []},
+            {name: 'Latifundie', category: 2, production: ['Flachs', 'Getreide'], upgrade: []},
+            {name: 'Lehmgrube', category: 2, production: ['Tonerde', 'Ziegel'], upgrade: []},
+            {name: 'Goldmine', category: 2, production: ['Gold'], upgrade: []},
+            {name: 'Eisenmine', category: 2, production: ['Eisen'], upgrade: []},
+            {name: 'Bleimine', category: 2, production: ['Blei'], upgrade: []},
+            {name: 'Köhlerei', category: 2, production: ['Kohle'], upgrade: []},
+            {name: 'Forstwirtschaft', category: 2, production: ['Holz'], upgrade: []}
+        ];
+    }
 
-    list.push({item:'Denare', category:9});
+
+    function _getEstateLotsLots() {
+
+        _estateLots = [
+            {name: 'Residenz', category: 3, production: ['Kohle'], upgrade: []},
+            {name: 'Marktplatz', category: 3, production: ['Kohle'], upgrade: []},
+            {name: 'Lager', category: 3, production: ['Kohle'], upgrade: []},
+            {name: 'Anlegestelle', category: 3, production: ['Kohle'], upgrade: []},
+            {name: 'Versammlungsplatz', category: 3, production: ['Kohle'], upgrade: []}
+        ];
+    }
+
+
+    function _getItemList() {
+
+        _itemList = [
+            {item: 'Blei', category: 2},
+            {item: 'Eisen', category: 2},
+            {item: 'Gold', category: 2, extras: ['Kohle']},
+            {item: 'Holz', category: 2},
+            {item: 'Kohle', category: 2},
+            {item: 'Kräuter', category: 2},
+            {item: 'Leder', category: 2, extras: ['Rinder', 'Salz']},
+            {item: 'Rohglas', category: 2},
+            {item: 'Tonerde', category: 2},
+            {item: 'Balken', category: 0, extras: ['Holz']},
+            {item: 'Bleirohre', category: 0, extras: ['Blei']},
+            {item: 'Elfenbein', category: 0},
+            {item: 'Fensterglas', category: 0, extras: ['Rohglas', 'Blei']},
+            {item: 'Marmor', category: 0, extras: ['Werkzeug']},
+            {item: 'Naturstein', category: 0},
+            {item: 'Statuen', category: 0, extras: ['Werkzeug', 'Naturstein']},
+            {item: 'Ziegel', category: 0, extras: ['Kohle']},
+            {item: 'Fischsauce', category: 6, extras: ['Amphoren', 'Salz']},
+            {item: 'Getreide', category: 6, extras: ['Pflug']},
+            {item: 'Gewürze', category: 6},
+            {item: 'Oliven', category: 6},
+            {item: 'Olivenöl', category: 6, extras: ['Amphoren', 'Oliven']},
+            {item: 'Salz', category: 6},
+            {item: 'Trauben', category: 6},
+            {item: 'Wein', category: 6, extras: ['Amphoren', 'Trauben']},
+            {item: 'Esel', category: 4},
+            {item: 'Geflügel', category: 4},
+            {item: 'Pferde', category: 4, extras: ['Getreide']},
+            {item: 'Rinder', category: 4},
+            {item: 'Schafe', category: 4},
+            {item: 'Ziegen', category: 4},
+            {item: 'Wilde Tiere', category: 4},
+            {item: 'Amphoren', category: 7, extras: ['Tonerde']},
+            {item: 'Geschirr', category: 7, extras: ['Tonerde', 'Kohle']},
+            {item: 'Heilsalbe', category: 7, extras: ['Kräuter', 'Olivenöl']},
+            {item: 'Möbel', category: 7, extras: ['Balken', 'Werkzeug']},
+            {item: 'Öllampen', category: 7, extras: ['Rohglas', 'Tonerde']},
+            {item: 'Pergament', category: 7, extras: ['Kräuter', 'Ziegen']},
+            {item: 'Schuhe', category: 7, extras: ['Leder']},
+            {item: 'Schriftrollen', category: 7},
+            {item: 'Flachs', category: 5},
+            {item: 'Leinen', category: 5, extras: ['Flachs', 'Webstuhl']},
+            {item: 'Mantel', category: 5, extras: ['Farben', 'Tuch']},
+            {item: 'Seide', category: 5},
+            {item: 'Toga', category: 5, extras: ['Farben', 'Seide']},
+            {item: 'Tuch', category: 5, extras: ['Wolle', 'Webstuhl']},
+            {item: 'Tunika', category: 5, extras: ['Leinen']},
+            {item: 'Wolle', category: 5},
+            {item: 'Karren', category: 3, extras: ['Holz', 'Leder']},
+            {item: 'Pflug', category: 3, extras: ['Balken', 'Eisen']},
+            {item: 'Rüstungen', category: 3, extras: ['Leinen', 'Tuch', 'Leder']},
+            {item: 'Segel', category: 3, extras: ['Leinen', 'Tuch']},
+            {item: 'Waffen', category: 3, extras: ['Kohle', 'Eisen']},
+            {item: 'Webstuhl', category: 3, extras: ['Werkzeug', 'Holz']},
+            {item: 'Werkzeug', category: 3, extras: ['Eisen']},
+            {item: 'Edelsteine', category: 1},
+            {item: 'Farben', category: 1, extras: ['Amphoren', 'Kräuter']},
+            {item: 'Glaswaren', category: 1, extras: ['Rohglas', 'Kohle']},
+            {item: 'Lehrschrift', category: 1, extras: ['Pergament', 'Geflügel']},
+            {item: 'Literatur', category: 1, extras: ['Schriftrollen', 'Öllampen']},
+            {item: 'Parfüm', category: 1},
+            {item: 'Prunkgefäße', category: 1, extras: ['Gold', 'Glaswaren']},
+            {item: 'Räucherwerk', category: 1},
+            {item: 'Schmuck', category: 1, extras: ['Gold', 'Edelsteine']}
+        ];
+
+        _itemList.push({item: 'Denare', category: 9});
+    }
+
+
+    function _getShortList() {
+        _shortList = ['Blei', 'Eisen', 'Gold', 'Holz', 'Kohle', 'Kräuter', 'Leder', 'Rohglas', 'Tonerde', 'Balken', 'Bleirohre', 'Elfenbein', 'Fensterglas', 'Marmor', 'Naturstein', 'Statuen', 'Ziegel', 'Fischsauce', 'Getreide', 'Gewürze', 'Oliven', 'Olivenöl', 'Salz', 'Trauben', 'Wein', 'Esel', 'Geflügel', 'Pferde', 'Rinder', 'Schafe', 'Ziegen', 'Wilde Tiere', 'Amphoren', 'Geschirr', 'Heilsalbe', 'Möbel', 'Öllampen', 'Pergament', 'Schuhe', 'Schriftrollen', 'Flachs', 'Leinen', 'Mantel', 'Seide', 'Toga', 'Tuch', 'Tunika', 'Wolle', 'Karren', 'Pflug', 'Rüstungen', 'Segel', 'Waffen', 'Webstuhl', 'Werkzeug', 'Edelsteine', 'Farben', 'Glaswaren', 'Lehrschrift', 'Literatur', 'Parfüm', 'Prunkgefäße', 'Räucherwerk', 'Schmuck', 'Denare'];
+    }
+
+
+    function _prepareData() {
+        _getCityLots();
+        _getCountryLots();
+        _getEstateLotsLots();
+        _getItemList();
+    }
+
+    // public funcs
+    return {
+        init: function(options) {
+            _opts = $.extend(_defaults, options);
+            _prepareData();
+            return this;
+        },
+        getCityLots: function() {
+            _getCityLots();
+            return _cityLots;
+        },
+        getCountryLots: function() {
+            _getCountryLots();
+            return _countryLots;
+        },
+        getEstateLots: function() {
+            _getEstateLotsLots();
+            return _estateLots;
+        },
+        getItemList: function() {
+            _getItemList();
+            return _itemList;
+        }
+    }
+}();
+
+
+function getBuilding(category) {
+
+    var cat = category || 'production';
+    var list = [];
+
+    switch (cat) {
+        case 'city':
+            list = dataRemanum.getCityLots();
+            break;
+        case 'country':
+            list = dataRemanum.getCountryLots();
+            break;
+        case 'estate':
+            list = dataRemanum.getEstateLots();
+            break;
+        case 'all':
+            list = list.concat(dataRemanum.getCityLots(), dataRemanum.getCountryLots(), dataRemanum.getEstateLots());
+            break;
+        case 'production':
+            list = list.concat(dataRemanum.getCityLots(), dataRemanum.getCountryLots());
+            break;
+        default:
+            list = list.concat(dataRemanum.getCityLots(), dataRemanum.getCountryLots());
+            break;
+    }
+
     return list;
+}
+
+
+function getBuildingsByItem(item) {
+
+    var building = getBuilding(),
+        list = [];
+
+    for (var i = 0; i < building.length; i++) {
+        if (building[i].upgrade.length > 0) {
+            for (var j = 0; j < building[i].upgrade.length; j++) {
+                if (building[i].upgrade[j].items.length > 0) {
+                    for (var k = 0; k < building[i].upgrade[j].items.length; k++) {
+                        if (building[i].upgrade[j].items[k].name == item) {
+                            if (list.indexOf(building[i].name)) {
+                                list.push(building[i].name);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    console.log(list);
+    return list;
+}
+
+
+function getBuildingCategory(id) {
+
+    return ['Stadtbetrieb', 'Landbetrieb'];
 }
 
 
 function getItem() {
 
-    var items = getList(),
+    var items = dataRemanum.getItemList(),
         array = [];
     for (var i = 0; i < items.length; i++) {
         array.push(items[i].item);
@@ -119,7 +298,7 @@ function getItemCategory(item) {
 
 function getItemsByExtras(item) {
 
-    var items = getList(),
+    var items = dataRemanum.getItemList(),
         array = [];
     for (var i = 0; i < items.length; i++) {
         if (items[i].hasOwnProperty('extras')) {
@@ -136,7 +315,7 @@ function getItemsByExtras(item) {
 function getCategoryItems(category) {
 
     var id = (isNaN(category)) ? getCategoryId(category) : category,
-        cat = getList(),
+        cat = dataRemanum.getItemList(),
         array = [];
     for (var i = 0; i < cat.length; i++) {
         if (cat[i].hasOwnProperty('category')) {
@@ -209,7 +388,7 @@ function multiEmpty(value) {
 function mouseOverItem(item, recursive) {
 
     var id = (isNaN(item)) ? getItemId(item) : item,
-        obj = getList()[id],
+        obj = dataRemanum.getItemList()[id],
         str = (!recursive) ? '<div class="row"><span class="icon item" style="background-position: ' + getItemImage(getItemName(id)) + ';"></span><span class="col-6">' + obj.item + '</span></div>' : '';
 
     if (obj.hasOwnProperty('extras')) {
@@ -236,7 +415,7 @@ function createItemSpan(element, array) {
 
     for (var i = 0; i < array.length; i++) {
         $('<span class="icon item"></span>').css({
-            'background-position':getItemImage(array[i])
+            'background-position': getItemImage(array[i])
         }).text(array[i]).appendTo(element);
     }
 }
@@ -254,15 +433,15 @@ function createTooltip(element, tooltip) {
                     coordX = $(this).position().left,
                     reduce = Math.round(tooltip.height() / 2);
                 tooltip.css({
-                    top:(coordY - reduce) + 'px',
-                    left:(coordX + 60) + 'px'
+                    top: (coordY - reduce) + 'px',
+                    left: (coordX + 60) + 'px'
                 });
             });
         }
         else {
             tooltip.css({
-                top:(element.offset().top - 10) + 'px',
-                left:'700px'
+                top: (element.offset().top - 10) + 'px',
+                left: '700px'
             });
         }
     });
@@ -277,13 +456,13 @@ function getData(obj, article, tooltip) {
     obj.action = 'read';
 
     $.ajax({
-        type:'POST',
-        async:false,
-        url:'app/core/home/json.remanum.php',
-        cache:false,
-        data:obj,
-        dataType:'json',
-        success:function(data) {
+        type: 'POST',
+        async: false,
+        url: 'app/core/home/json.remanum.php',
+        cache: false,
+        data: obj,
+        dataType: 'json',
+        success: function(data) {
             obj = {};
             obj.items = data;
             article.children('div').remove();
@@ -298,7 +477,7 @@ function getData(obj, article, tooltip) {
 
                 div.attr('id', 'row-' + i);
                 div.find('span.item').css({
-                    'backgroundPosition':getItemImage(tmp)
+                    'backgroundPosition': getItemImage(tmp)
                 }).text(tmp);
 
                 if (tmp.lastIndexOf('+') != -1) {
@@ -325,7 +504,7 @@ function getData(obj, article, tooltip) {
             changeBackground(article.children('div'), 'even');
             createTooltip(article, tooltip);
         },
-        error:function() {
+        error: function() {
             alert('error: read');
         }
     });
@@ -409,8 +588,8 @@ function sortAlphabet(array) {
                     div = sort.closest('div'),
                     text = (sortTag[0].tagName == 'SPAN') ? sort.text() : sort.val();
                 sortArr.push({
-                    sortvalue:text.replace('m', ''),
-                    datarowid:div.attr('id')
+                    sortvalue: text.replace('m', ''),
+                    datarowid: div.attr('id')
                 });
             });
             sortArr = sortable(sortArr);
@@ -424,9 +603,9 @@ function sortAlphabet(array) {
         // collect data
         getData(obj, trade_article, tooltip);
         trade_article.sortable({
-            opacity:0.6,
-            items:'div',
-            update:function() {
+            opacity: 0.6,
+            items: 'div',
+            update: function() {
                 changeBackground(trade_article.children('div'), 'even');
             }
         });
@@ -451,17 +630,17 @@ function sortAlphabet(array) {
             });
 
             $.ajax({
-                type:'POST',
-                async:false,
-                url:'app/core/home/json.remanum.php',
-                cache:false,
-                data:obj,
-                dataType:'json',
-                success:function() {
+                type: 'POST',
+                async: false,
+                url: 'app/core/home/json.remanum.php',
+                cache: false,
+                data: obj,
+                dataType: 'json',
+                success: function() {
                     obj = {};
                     getData(obj, trade_article, tooltip);
                 },
-                error:function() {
+                error: function() {
                     alert('error: save');
                 }
             });
@@ -498,5 +677,11 @@ function sortAlphabet(array) {
         }
         createTooltip(prod_article, tooltip);
 
+        // buildinglist
+        // =======================================================
+
+        var build_section = $('#remanum .productlist'),
+            build_copydiv = build_section.find('header div'),
+            build_article = build_section.find('article');
     }
 })();

@@ -4,7 +4,8 @@
     background: $from;
     background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
     background: -moz-linear-gradient(top, $from, $to);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '$from', endColorstr = '$to');
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fcfcfc, endColorstr=#cfcfcf);
+    zoom: 1;
 }
 
 @mixin shadow-custom($side: 0 1px 0, $color: #000000, $aplha: 0.5){

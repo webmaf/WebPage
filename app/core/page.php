@@ -28,7 +28,7 @@
         <link type="text/css" rel="stylesheet" href="stylesheets/ie.css" media="screen, projection" /><![endif]-->
         <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
         <!-- All JavaScript at the bottom, except this Modernizr build. Modernizr enables HTML5 elements & feature detects for optimal performance. Create your own custom Modernizr build: www.modernizr.com/download/ -->
-        <script type="text/javascript" src="js/libs/modernizr-2.5.3.min.js"></script>
+<!--        <script type="text/javascript" src="js/libs/modernizr-2.5.3.min.js"></script>-->
     </head>
     <body>
         <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6. chromium.org/developers/how-tos/chrome-frame-getting-started -->

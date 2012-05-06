@@ -146,9 +146,9 @@ else {
             </footer>
         </div>
         <!-- JavaScript at the bottom for fast page loading -->
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!--        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
         <script type="text/javascript">window.jQuery || document.write('<script type="text/javascript" src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<!--        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>-->
         <?php
         foreach ($page_script as $value) {
             echo $value . "\n";

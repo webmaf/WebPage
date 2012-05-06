@@ -49,14 +49,15 @@
             <li><button data-tab="prolog">nothing</button></li>
             <li><button data-tab="tradelist">tradelist</button></li>
             <li><button data-tab="productlist">productlist</button></li>
-            <li><button data-tab="buildings">buildings</button></li>
+            <li><button data-tab="buildinglist">buildinglist</button></li>
         </ul>
     </nav>
 
     <section class="prolog">
         <article>
             <div><strong>Notizen:</strong></div>
-            <code>$('.remusChat').attr('style', 'left:0; top:0').find('.body').css({height: '730px'}).find('.timeline').css({height: '705px'})</code>
+            <code>$('.remusChat').attr('style', 'left:0; top:0').find('.body').css({height: '730px'}).find('.timeline').css({height: '705px'})</code><br />
+            <code>$('.remusChat').attr('style', 'left:0; top:0').find('.body').css({height: '910px'}).find('.timeline').css({height: '885px'})</code>
         </article>
     </section>
 
@@ -113,7 +114,7 @@
         <article></article>
     </section>
 
-    <section class="buildings">
+    <section class="buildinglist">
         <header>
             <section></section>
             <div class="row">

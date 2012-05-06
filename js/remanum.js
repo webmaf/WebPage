@@ -13,9 +13,23 @@ function DataRemanum() {
         shortList,
         workingMedium;
 
+    var cityGoods = [
+        {min: 2, max: 6},
+        {min: 2, max: 10},
+        {min: 4, max: 10},
+        {min: 7, max: 10}
+    ];
+
+    var countryGoods = [
+        {min: 2, max: 10},
+        {min: 2, max: 6},
+        {min: 4, max: 10},
+        {min: 7, max: 10}
+    ];
+
     cityLots = [
         {name: 'Apotheke', category: 1, production: ['Heilsalbe'], upgrade: []},
-        {name: 'Brennerei', category: 1, production: ['Amphoren'], upgrade: []},
+        {name: 'Brennerei', category: 1, production: ['Amphoren'], upgrade: ['Balken', 'Tonerde', 'Ziegen']},
         {name: 'Färberei', category: 1, production: ['Farben'], upgrade: []},
         {name: 'Garummanufaktur', category: 1, production: ['Fischsauce'], upgrade: []},
         {name: 'Gerberei', category: 1, production: ['Leder', 'Pergament'], upgrade: []},
@@ -23,42 +37,28 @@ function DataRemanum() {
         {name: 'Goldschmied', category: 1, production: ['Prunkgefäße', 'Schmuck'], upgrade: []},
         {name: 'Kelterei', category: 1, production: ['Wein'], upgrade: []},
         {name: 'Lederwerkstatt', category: 1, production: ['Rüstungen', 'Schuhe'], upgrade: []},
-        {name: 'Schmied', category: 1, production: ['Waffen', 'Werkzeug'], upgrade: []},
+        {name: 'Schmied', category: 1, production: ['Waffen', 'Werkzeug'], upgrade: ['Balken', 'Werlzeug', 'Kohle']},
         {name: 'Schneiderei', category: 1, production: ['Mantel', 'Toga', 'Tunika'], upgrade: []},
-        {name: 'Schreibstube', category: 1, production: ['Lehrschrift', 'Literatur'], upgrade: []},
+        {name: 'Schreibstube', category: 1, production: ['Lehrschrift', 'Literatur'], upgrade: ['Möbel', 'Schriftrollen', 'Öllampen', 'Möbel+']},
         {name: 'Schreinerei', category: 1, production: ['Möbel', 'Webstuhl'], upgrade: []},
         {name: 'Segelmacher', category: 1, production: ['Segel'], upgrade: []},
         {name: 'Spenglerei', category: 1, production: ['Bleirohre'], upgrade: []},
         {name: 'Steinmetz', category: 1, production: ['Statuen'], upgrade: []},
-        {name: 'Stellmacher', category: 1, production: ['Karren', 'Pflug'], upgrade: []},
+        {name: 'Stellmacher', category: 1, production: ['Karren', 'Pflug'], upgrade: ['Holz', 'Werkzeuge', 'Bleirohre']},
         {name: 'Sägewerk', category: 1, production: ['Balken'], upgrade: []},
-        {name: 'Töpferei', category: 1, production: ['Geschirr', 'Öllampen'], upgrade: []},
-//            upgrade: [
-//                {denare: 1430, items: [ {name: 'Tonerde', amount: 240}, {name: 'Möbel', amount: 20} ], sale: 1500},
-//                {denare: 4280, items: [ {name: 'Tonerde', amount: 720}, {name: 'Möbel', amount: 60} ]},
-//                {denare: 7560, items: [ {name: 'Tonerde', amount: 1272}, {name: 'Möbel', amount: 106}, {name: 'Amphoren', amount: 784} ], sale: 8195},
-//                {denare: 11550, items: [ {name: 'Tonerde', amount: 1937}, {name: 'Möbel', amount: 161}, {name: 'Amphoren', amount: 1194} ], sale: 19807},
-//                {denare: 16550, items: [ {name: 'Tonerde', amount: 2777}, {name: 'Möbel', amount: 231}, {name: 'Amphoren', amount: 1712} ], sale: 37499},
-//                {denare: 23100, items: [ {name: 'Naturstein', amount: 3467}, {name: 'Karren', amount: 130}, {name: 'Farbe', amount: 356} ], sale: 64642}
-//            ]
-//        },
-        {name: 'Weberei', category: 1, production: ['Leinen', 'Tuch'], upgrade: []},
+        {name: 'Töpferei', category: 1, production: ['Geschirr', 'Öllampen'], upgrade: ['Tonerde', 'Möbel', 'Amphoren', 'Tonerde+']},
+        {name: 'Weberei', category: 1, production: ['Leinen', 'Tuch'], upgrade: ['Tonerde', 'Webstuhl', 'Farben']},
         {name: 'Ölpresse', category: 1, production: ['Olivenöl'], upgrade: []}
     ];
 
     countryLots = [
-        {name: 'Eselzucht', category: 2, production: ['Esel'], upgrade: []},
+        {name: 'Eselzucht', category: 2, production: ['Esel'], upgrade: ['Esel', 'Getreide']},
+        {name: 'Schafzucht', category: 2, production: ['Schafe', 'Wolle'], upgrade: ['Balken', 'Schafe', 'Tunika']},
         {name: 'Pferdezucht', category: 2, production: ['Pferde'], upgrade: []},
-        {name: 'Schafzucht', category: 2, production: ['Schafe', 'Wolle'], upgrade: []},
-//            upgrade: [
-//                {denare: 950, items: [ {name: 'Balken', amount: 80}, {name: 'Schafe', amount: 56} ], sale: 1000},
-//                {denare: 2860, items: [ {name: 'Balken', amount: 240}, {name: 'Schafe', amount: 168} ], sale: 2131},
-//            ]
-//        },
-        {name: 'Latifundie', category: 2, production: ['Flachs', 'Getreide'], upgrade: []},
-        {name: 'Lehmgrube', category: 2, production: ['Tonerde', 'Ziegel'], upgrade: []},
+        {name: 'Latifundie', category: 2, production: ['Flachs', 'Getreide'], upgrade: ['Flachs', 'Pflug', 'Leder']},
+        {name: 'Lehmgrube', category: 2, production: ['Tonerde', 'Ziegel'], upgrade: ['Tonerde', 'Eisen', 'Rinder']},
         {name: 'Goldmine', category: 2, production: ['Gold'], upgrade: []},
-        {name: 'Eisenmine', category: 2, production: ['Eisen'], upgrade: []},
+        {name: 'Eisenmine', category: 2, production: ['Eisen'], upgrade: ['Amphoren', 'Eisen', 'Balken', 'Karren']},
         {name: 'Bleimine', category: 2, production: ['Blei'], upgrade: []},
         {name: 'Köhlerei', category: 2, production: ['Kohle'], upgrade: []},
         {name: 'Forstwirtschaft', category: 2, production: ['Holz'], upgrade: []}
@@ -66,10 +66,45 @@ function DataRemanum() {
 
     estateLots = [
         {name: 'Residenz', category: 3, production: ['Kohle'], upgrade: []},
-        {name: 'Marktplatz', category: 3, production: ['Kohle'], upgrade: []},
+        {name: 'Marktplatz', category: 3, production: ['Kohle'], upgrade: ['Möbel', 'Leinen', 'Esel', 'Karren']},
         {name: 'Lager', category: 3, production: ['Kohle'], upgrade: []},
         {name: 'Anlegestelle', category: 3, production: ['Kohle'], upgrade: []},
         {name: 'Versammlungsplatz', category: 3, production: ['Kohle'], upgrade: []}
+    ];
+
+    provinceLots = [
+        {name: 'Akademie', category: 4, spend: [
+            {level: 1, items: ['Amphoren', 'Holz', 'Leinen']},
+            {level: 2, items: ['Amphoren', 'Möbel', 'Leinen']},
+            {level: 3, items: ['Öllampen', 'Möbel', 'Leinen']},
+            {level: 4, items: ['Öllampen', 'Möbel', 'Lehrschrift+']},
+            {level: 5, items: ['Öllampen', 'Möbel+', 'Lehrschrift+']}
+        ]},
+        {name: 'Aquädukt', category: 4, spend: [
+            {level: 1, items: ['Tonerde', 'Holz', 'Werkzeug']},
+            {level: 2, items: ['Tonerde', 'Naturstein', 'Werkzeug']},
+            {level: 3, items: ['Bleirohre', 'Naturstein', 'Werkzeug']},
+            {level: 4, items: ['Bleirohre', 'Naturstein', 'Pergament+']}
+        ]},
+        {name: 'Börse', category: 4, spend: [
+            {level: 1, items: ['Balken', 'Tonerde', 'Eisen']},
+            {level: 2, items: ['Balken', 'Tonerde', 'Fensterglas']},
+            {level: 3, items: ['Marmor', 'Tonerde', 'Fensterglas']},
+            {level: 4, items: ['Marmor', 'Gold+', 'Fensterglas']},
+            {level: 5, items: ['Marmor', 'Gold+', 'Fensterglas']}
+        ]},
+        {name: 'Hafen', category: 4, spend: [
+            {level: 1, items: ['Amphoren', 'Holz', 'Flachs']},
+            {level: 2, items: ['Hühner', 'Holz', 'Flachs']},
+            {level: 3, items: ['Hühner', 'Holz', 'Segel']},
+            {level: 4, items: ['Hühner', 'Balken+', 'Segel']}
+        ]},
+        {name: 'Kolesseum', category: 4, spend: [
+            {level: 1, items: ['Eisen', 'Werkzeuge', 'Tonerde']},
+            {level: 1, items: ['Eisen', 'Werkzeuge', 'Ziegel']},
+            {level: 1, items: ['Eisen', 'Rüstungen', 'Ziegel']},
+            {level: 1, items: ['Statuen', 'Rüstungen', 'Ziegel']}
+        ]},
     ];
 
     itemList = [
@@ -608,13 +643,13 @@ function sortAlphabet(array) {
 
         // collect data
         getData(obj, trade_article, tooltip);
-        trade_article.sortable({
-            opacity: 0.6,
-            items: 'div',
-            update: function() {
-                changeBackground(trade_article.children('div'), 'even');
-            }
-        });
+//        trade_article.sortable({
+//            opacity: 0.6,
+//            items: 'div',
+//            update: function() {
+//                changeBackground(trade_article.children('div'), 'even');
+//            }
+//        });
 
         addEventDeleteRow(trade_section);
 
@@ -654,8 +689,19 @@ function sortAlphabet(array) {
 
         // productlist
         // =======================================================
+        productList();
+
+        // buildinglist
+        // =======================================================
+        buildingList();
+
+
+    }
+
+    function productList() {
+
         var prod_section = $('#remanum .productlist'),
-            prod_copydiv = prod_section.find('header div'),
+            prod_copydiv = prod_section.find('header > div'),
             prod_article = prod_section.find('article'),
             categoryName = getCategory(),
             categoryAdds = 'Verwendung';
@@ -682,12 +728,26 @@ function sortAlphabet(array) {
             });
         }
         createTooltip(prod_article, tooltip);
+    }
 
-        // buildinglist
-        // =======================================================
+    function buildingList() {
 
-        var build_section = $('#remanum .productlist'),
-            build_copydiv = build_section.find('header div'),
-            build_article = build_section.find('article');
+        var build_section = $('#remanum .buildinglist'),
+            build_copydiv = build_section.find('header > div'),
+            build_article = build_section.find('article').html(''),
+            buildings = getBuilding('country');
+
+
+        console.log(buildings);
+        console.log(buildings.length);
+        // build Category and add Items
+        for (var i = 0; i < buildings.length; i++) {
+            console.log('===' + i);
+            var div = build_copydiv.clone().appendTo(build_article),
+                items = getCategoryItems(buildings[i].name);
+            console.log(buildings[i].name);
+            div.find('.product').text(buildings[i].name);
+//            createItemSpan(div, items);
+        }
     }
 })();
